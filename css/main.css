@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+:root {
+    /* Base Colors */
+    --bs-white: #ffffff;
+    --bs-black: #000000;
+
+    /* Typography Overrides (Bootstrap 5) */
+    --bs-font-sans-serif: 'Almarai', sans-serif;
+    --bs-body-font-family: var(--bs-font-sans-serif);
+
+    /* Bootstrap Core Overrides */
+    --bs-primary: #104084;
+    --bs-primary-rgb: 16, 64, 132;
+
+    /* Custom Primary Theme Shades */
+    --custom-primary-light: #e7ecf3;
+    --custom-primary-light-hover: #dbe2ed;
+    --custom-primary-light-active: #b5c4d9;
+    --custom-primary-hover: #0e3a77;
+    --custom-primary-active: #0d336a;
+    --custom-primary-dark: #0c3063;
+    --custom-primary-dark-hover: #0a264f;
+    --custom-primary-dark-active: #071d3b;
+    --custom-primary-darker: #06162e;
+}
