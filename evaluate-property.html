@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Evaluate your property with Darak - Get accurate market value in seconds.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Evaluate Property | Darak</title>
+</head>
+
+<body>
+
+    <!-- Transparent Navbar -->
+    <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <a class="navbar-brand d-flex align-items-center " href="#">
+                <img src="images/logo.png" class="img-fluid" alt="">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link active" href="#">Home</a></li>
+                    <li><a class="custom-nav-link" href="#">About us</a></li>
+                    <li><a class="custom-nav-link" href="#">Properties</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black px-3 py-2 rounded" href="#">Consulting</a>
+                            </li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class=" text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-right ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Commercial</a></li>
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Residential</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="#">Insights</a></li>
+                    <li><a class="custom-nav-link" href="#">Contact us</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3  ">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="#"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="#" class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">English
+                                    (EN)</a></li>
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">العربية
+                                    (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section 1: Evaluation Hero -->
+        <section class="evaluation-hero about-hero position-relative">
+            <div class="container position-relative z-index-2">
+                <div class="row align-items-center">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="about-hero-content py-5">
+                            <span class="badge bg-glass rounded-pill px-3 py-2 text-white mb-4">
+                                <i class="fal fa-home me-2"></i> Evaluate Property
+                            </span>
+                            <h1 class="about-hero-title mb-4">
+                                EVALUATE PROPERTY
+                            </h1>
+                            <p class="about-hero-text text-white opacity-75 fz18 mb-5">
+                                Because the right price is the first step to selling without losing. Get your property
+                                value now! Get an appraisal/rate valuation based on actual market sales in less than 30
+                                seconds, with no drill and no commitment.
+                            </p>
+                            <a href="#" class="btn btn-accent rounded-pill px-5 py-3 fz18 fw-bold">
+                                View Darak House <i class="fal fa-arrow-right ms-2 mt-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Evaluation Form -->
+                    <div class="col-lg-5 offset-lg-1">
+                        <div class="evaluation-form-card">
+                            <form action="#">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Property Location*</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>Doha</option>
+                                            <option>Lusail</option>
+                                            <option>The Pearl</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Property Type*</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>Villa</option>
+                                            <option>Apartment</option>
+                                            <option>Office</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Property Age*</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>New</option>
+                                            <option>1-5 Years</option>
+                                            <option>5-10 Years</option>
+                                            <option>10+ Years</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Property Finishing*</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>Super Deluxe</option>
+                                            <option>Deluxe</option>
+                                            <option>Standard</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Property Occupancy*</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select</option>
+                                            <option>Vacant</option>
+                                            <option>Occupied</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Monthly Rate*</label>
+                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit"
+                                            class="btn btn-accent w-100 py-3 rounded-pill fw-bold fz18">
+                                            Evaluate Home <i class="fal fa-arrow-right ms-2 mt-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Why Choose Us -->
+        <section class="why-choose-us py-64">
+            <div class="container">
+                <div class="row align-items-center g-lg-5">
+                    <!-- Left Column: Visual Composition -->
+                    <div class="col-lg-5 ">
+                        <div class="composition-wrapper">
+                            <img src="images/composition-main.png" alt="Why Choose Us" class="composition-main-img">
+
+                            <!-- Experience Badge (Top-Start) -->
+                            <div class="experience-badge">
+                                <i class="fal fa-medal medal-icon"></i>
+                                <span class="exp-years">14 Years</span>
+                                <span class="exp-text">Working Experience</span>
+                            </div>
+
+                            <!-- Video Trigger (Bottom-End) -->
+                            <div class="video-trigger-wrapper" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <img src="images/video-thumb.png" alt="Video Background" class="video-trigger-img">
+                                <div class="video-play-overlay">
+                                    <div class="play-circle-sm">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Features -->
+                    <div class="col-lg-6 offset-lg-1">
+                        <div class="features-content ps-lg-4">
+                            <span class="text-muted fw-bold fz14 text-uppercase mb-2 d-block">WHY CHOOSE US</span>
+                            <h2 class="display-5 fw-bold text-primary mb-4">
+                                Why Choose Darak To Value Your Property?
+                            </h2>
+
+                            <div class="d-flex flex-column gap-4 mt-5">
+                                <!-- Feature 1 -->
+                                <div class="feature-item-v3 d-flex align-items-start">
+                                    <div class="feature-icon-box">
+                                        <i class="fal fa-chart-line"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h4 class="fw-bold text-primary mb-1">Data-Driven Valuation</h4>
+                                        <p class="text-muted mb-0">
+                                            We use real market data and accurate property comparisons — no guessing or
+                                            overpricing.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Feature 2 -->
+                                <div class="feature-item-v3 d-flex align-items-start">
+                                    <div class="feature-icon-box">
+                                        <i class="fal fa-user-check"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h4 class="fw-bold text-primary mb-1">Expert Evaluation With Precision</h4>
+                                        <p class="text-muted mb-0">
+                                            As investment experts, we evaluate your property in detail—residential or
+                                            investment—ensuring the best fair valuation for marketing.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Feature 3 -->
+                                <div class="feature-item-v3 d-flex align-items-start">
+                                    <div class="feature-icon-box">
+                                        <i class="fal fa-diamond"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h4 class="fw-bold text-primary mb-1">Experienced Real Estate Specialists</h4>
+                                        <p class="text-muted mb-0">
+                                            Experience since 2012 in the real estate sector — our experts hold top
+                                            academic qualifications and practical experience to deliver an ideal
+                                            evaluation.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testi-section py-5">
+            <div class="testi-container">
+                <div class="container">
+                    <div class="row g-0 h-100">
+
+                        <!-- LEFT: Static Content -->
+                        <div class="col-lg-5 testi-left d-flex flex-column justify-content-between">
+                            <!-- Top: heading -->
+                            <div>
+                                <!-- Diamond icon -->
+                                <i class="fas fa-diamond testi-diamond mb-3"></i>
+                                <h2 class="testi-heading">
+                                    What Our<br>
+                                    <span class="text-accent">Customers</span> Say
+                                </h2>
+                                <p class="testi-desc">
+                                    Following are some responses from our customers who are satisfied with the service
+                                    from
+                                    our real estate
+                                </p>
+                            </div>
+
+                            <!-- Bottom: Prev/Progress/Next nav -->
+                            <div class="testi-nav">
+                                <button class="testi-nav-btn testi-button-prev">Prev</button>
+                                <div class="testi-progressbar"></div>
+                                <button class="testi-nav-btn testi-button-next">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Swiper -->
+                        <div class="col-lg-7 testi-right">
+                            <div class="swiper testi-swiper h-100">
+                                <div class="swiper-wrapper">
+
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide testi-slide">
+                                        <div class="testi-stars mb-4">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                        <blockquote class="testi-quote">
+                                            "Even though it's in the middle of the city, the natural feel is very calm
+                                            and
+                                            peaceful"
+                                        </blockquote>
+                                        <div class="testi-author mt-4">
+                                            <p class="testi-author-name">Tamer Taha</p>
+                                            <p class="testi-author-title">Shadows Inc Director</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide testi-slide">
+                                        <div class="testi-stars mb-4">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                        <blockquote class="testi-quote">
+                                            "The team at Darak guided us through every step. Finding our dream home was
+                                            seamless and stress-free."
+                                        </blockquote>
+                                        <div class="testi-author mt-4">
+                                            <p class="testi-author-name">Sara Al-Mansouri</p>
+                                            <p class="testi-author-title">Business Owner</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide testi-slide">
+                                        <div class="testi-stars mb-4">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                        <blockquote class="testi-quote">
+                                            "Outstanding professionals who truly care. Our investment property was a
+                                            perfect
+                                            match for our goals."
+                                        </blockquote>
+                                        <div class="testi-author mt-4">
+                                            <p class="testi-author-name">Khalid Al-Dosari</p>
+                                            <p class="testi-author-title">Senior Investment Manager</p>
+                                        </div>
+                                    </div>
+
+                                </div><!-- /.swiper-wrapper -->
+                            </div><!-- /.swiper -->
+                        </div>
+
+                    </div><!-- /.row -->
+                </div><!-- /.testi-container -->
+            </div>
+        </section>
+
+        <!-- CTA Connect Section -->
+        <section class="cta-connect-section py-100">
+            <div class="container text-center">
+                <h2 class="cta-connect-title text-primary-dark fz60 mb-5 wow fadeInUp">
+                    READY TO CONNECT? REACH OUT TO <br class="d-none d-lg-block"> DARAK REAL ESTATE TODAY!
+                </h2>
+                <div class="cta-connect-wrapper mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="contact-us.html" class="cta-connect-link">
+                        <div class="cta-image-container">
+                            <img src="images/contact-bg.png" alt="Connect with Darak" class="img-fluid">
+                            <div class="cta-gradient-overlay"></div>
+                            <div class="cta-chat-btn">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer would be here -->
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 p-0 mb-2">
+                    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-lg">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

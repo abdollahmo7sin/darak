@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Join Darak Real Estate — explore open positions and build your career in real estate.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Careers | Darak Real Estate</title>
+</head>
+
+<body>
+
+    <!-- Transparent Navbar -->
+    <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <a class="navbar-brand d-flex align-items-center " href="index.html">
+                <img src="images/logo.png" class="img-fluid" alt="Darak Logo">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link" href="index.html">Home</a></li>
+                    <li><a class="custom-nav-link" href="about.html">About us</a></li>
+                    <li><a class="custom-nav-link" href="properties.html">Properties</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black px-3 py-2 rounded" href="#">Consulting</a>
+                            </li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class=" text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-right ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Commercial</a></li>
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Residential</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="insights.html">Insights</a></li>
+                    <li><a class="custom-nav-link active" href="careers.html">Careers</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3  ">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="evaluate-property.html"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="add-property.html"
+                            class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">English
+                                    (EN)</a></li>
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">العربية
+                                    (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ===== SECTION 1: CAREERS HERO ===== -->
+        <!-- Reuses .about-hero: dark blue bg + Line pattern.png dashed + circular badge -->
+        <section class="about-hero position-relative">
+            <div class="container position-relative z-index-2">
+                <div class="row align-items-center">
+                    <!-- Left Content Column -->
+                    <div class="col-lg-8">
+                        <div class="about-hero-content py-5">
+                            <span
+                                class="about-hero-subtitle d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill mb-3">
+                                👋 Join Our Team
+                            </span>
+                            <h1 class="about-hero-title mb-4">
+                                BUILD YOUR CAREER<br>IN REAL ESTATE
+                            </h1>
+                            <p class="about-hero-text">
+                                Join Darak real estate platform and help shape the future of property transactions.
+                                We're looking for talented individuals who are passionate about innovation and
+                                excellence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Column — Circular Badge Only (reused from add-property.html) -->
+                    <div class="col-lg-4 text-center">
+                        <div class="about-hero-badge-wrap add-property-badge">
+                            <svg viewBox="0 0 100 100" class="circular-text-svg">
+                                <path id="careerCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                    fill="transparent" />
+                                <text font-size="8" font-weight="bold" fill="white" letter-spacing="2">
+                                    <textPath xlink:href="#careerCirclePath">
+                                        THE BEST PROPERTY PLATFORM • THE BEST PROPERTY PLATFORM •
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="badge-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: OPEN POSITIONS ===== -->
+        <section class="careers-positions-section py-100">
+            <div class="container">
+
+                <div class="mb-5">
+                    <h2 class="text-primary fw-bolder fz40 mb-2">Open Positions</h2>
+                    <p class="text-muted fz16">Find your perfect role and start your journey with us.</p>
+                </div>
+
+                <!-- Search / Filter Bar -->
+                <div class="careers-filter-bar mb-5">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-8">
+                            <div class="careers-search-input-wrapper position-relative">
+                                <i class="fal fa-search careers-search-icon"></i>
+                                <input id="jobSearchInput" type="text" class="form-control careers-search-control"
+                                    placeholder="Search positions..." aria-label="Search positions">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <select id="jobDepartmentFilter" class="form-select careers-filter-select"
+                                aria-label="Filter by department">
+                                <option value="" selected>All Category</option>
+                                <option value="Sales">Sales & Brokerage</option>
+                                <option value="Property Management">Property Management</option>
+                                <option value="Marketing">Marketing & Communications</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Cards Grid -->
+                <!-- Card 1 -->
+                <div class="col-lg-12 mb-4">
+                    <div class="job-posting-card">
+                        <div class="job-posting-card-header">
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                <h3 class="job-posting-title mb-0">Senior Broker Specialist</h3>
+                                <span class="job-new-badge">NEW</span>
+                            </div>
+                        </div>
+                        <div class="job-posting-card-body">
+                            <p class="job-posting-desc">Join our darak real estate team as a Senior Broker
+                                Specialist. We are seeking an experienced real estate professional who can drive
+                                sales, build client relationships, and contribute to our growth in the Qatar market.
+                            </p>
+                        </div>
+                        <div class="job-posting-meta">
+                            <span class="job-meta-item"><i class="fal fa-building"></i> Sales & Brokerage</span>
+                            <span class="job-meta-item"><i class="fal fa-map-marker-alt"></i> Doha, Qatar</span>
+                            <span class="job-meta-item"><i class="fal fa-clock"></i> Full Time</span>
+                            <span class="job-meta-item"><i class="fal fa-calendar-alt"></i> Posted June 2021</span>
+                        </div>
+                        <div class="job-posting-card-footer">
+                            <a href="#apply-form" class="job-view-details-link">View Details</a>
+                            <a href="#apply-form" class="btn btn-primary btn-sm job-apply-btn rounded-pill px-4">
+                                Apply Here <i class="fal fa-paper-plane ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-12 mb-4">
+                    <div class="job-posting-card">
+                        <div class="job-posting-card-header">
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                <h3 class="job-posting-title mb-0">Property Manager</h3>
+                                <span class="job-new-badge">NEW</span>
+                            </div>
+                        </div>
+                        <div class="job-posting-card-body">
+                            <p class="job-posting-desc">We are looking for an experienced Property Manager to
+                                oversee a portfolio of residential and commercial properties. The ideal candidate
+                                will ensure optimal property performance and tenant satisfaction.</p>
+                        </div>
+                        <div class="job-posting-meta">
+                            <span class="job-meta-item"><i class="fal fa-building"></i> Property Management</span>
+                            <span class="job-meta-item"><i class="fal fa-map-marker-alt"></i> Doha, Qatar</span>
+                            <span class="job-meta-item"><i class="fal fa-clock"></i> Full Time</span>
+                            <span class="job-meta-item"><i class="fal fa-calendar-alt"></i> Posted June 2021</span>
+                        </div>
+                        <div class="job-posting-card-footer">
+                            <a href="#apply-form" class="job-view-details-link">View Details</a>
+                            <a href="#apply-form" class="btn btn-primary btn-sm job-apply-btn rounded-pill px-4">
+                                Apply Here <i class="fal fa-paper-plane ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-12 mb-4">
+                    <div class="job-posting-card">
+                        <div class="job-posting-card-header">
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                <h3 class="job-posting-title mb-0">Marketing Specialist</h3>
+                                <span class="job-new-badge">NEW</span>
+                            </div>
+                        </div>
+                        <div class="job-posting-card-body">
+                            <p class="job-posting-desc">Join our marketing team to create compelling campaigns that
+                                showcase our properties and strengthen our brand presence in the Qatar real estate
+                                market.</p>
+                        </div>
+                        <div class="job-posting-meta">
+                            <span class="job-meta-item"><i class="fal fa-building"></i> Marketing &
+                                Communications</span>
+                            <span class="job-meta-item"><i class="fal fa-map-marker-alt"></i> Doha, Qatar</span>
+                            <span class="job-meta-item"><i class="fal fa-clock"></i> Full Time</span>
+                            <span class="job-meta-item"><i class="fal fa-calendar-alt"></i> Posted May 2021</span>
+                        </div>
+                        <div class="job-posting-card-footer">
+                            <a href="#apply-form" class="job-view-details-link">View Details</a>
+                            <a href="#apply-form" class="btn btn-primary btn-sm job-apply-btn rounded-pill px-4">
+                                Apply Here <i class="fal fa-paper-plane ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reused Pagination -->
+                <nav aria-label="Job listings pagination">
+                    <ul class="pagination custom-pagination border-0">
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <i class="fal fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: APPLICATION FORM ===== -->
+        <section id="apply-form" class="careers-apply-section py-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="careers-apply-wrapper">
+
+                            <!-- Section Header -->
+                            <h2 class="text-primary fw-bolder fz40 mb-2">Apply for a Position</h2>
+                            <p class="text-muted fz16 mx-auto" style="max-width: 520px;">
+                                Fill out the form below and we'll be in touch.
+                            </p>
+
+                            <!-- Application Form -->
+                            <form class="careers-apply-form" id="careerApplicationForm" novalidate>
+                                <div class="row g-4">
+
+                                    <!-- Full Name -->
+                                    <div class="col-md-6">
+                                        <label for="applicantName" class="form-label careers-form-label">
+                                            Full Name *
+                                        </label>
+                                        <div class="input-wrapper-custom position-relative">
+                                            <i class="fal fa-user careers-input-icon"></i>
+                                            <input type="text" id="applicantName"
+                                                class="form-control careers-form-control"
+                                                placeholder="Enter your full name" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-md-6">
+                                        <label for="applicantEmail" class="form-label careers-form-label">
+                                            Email Address *
+                                        </label>
+                                        <div class="input-wrapper-custom position-relative">
+                                            <i class="fal fa-envelope careers-input-icon"></i>
+                                            <input type="email" id="applicantEmail"
+                                                class="form-control careers-form-control"
+                                                placeholder="your.email@example.com" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <div class="col-md-6">
+                                        <label for="applicantPhone" class="form-label careers-form-label">
+                                            Phone Number *
+                                        </label>
+                                        <div class="input-wrapper-custom position-relative">
+                                            <i class="fal fa-phone careers-input-icon"></i>
+                                            <input type="tel" id="applicantPhone"
+                                                class="form-control careers-form-control" placeholder="+974 XXXX XXXX"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desired Role -->
+                                    <div class="col-md-6">
+                                        <label for="applicantRole" class="form-label careers-form-label">
+                                            Desired Role *
+                                        </label>
+                                        <div class="input-wrapper-custom position-relative">
+                                            <i class="fal fa-briefcase careers-input-icon"></i>
+                                            <select id="applicantRole" class="form-select careers-form-select" required>
+                                                <option value="" disabled selected>e.g. Senior Broker Specialist
+                                                </option>
+                                                <option>Senior Broker Specialist</option>
+                                                <option>Property Manager</option>
+                                                <option>Marketing Specialist</option>
+                                                <option>Frontend Developer</option>
+                                                <option>Client Relations Manager</option>
+                                                <option>Financial Analyst</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- CV Upload — Drag & Drop -->
+                                    <div class="col-12">
+                                        <label class="form-label careers-form-label">Upload Your CV *</label>
+
+                                        <!-- Hidden real file input -->
+                                        <input type="file" id="cvFileInput" accept=".pdf,.doc,.docx" class="d-none"
+                                            aria-label="Upload CV">
+
+                                        <!-- Visible drag-drop area -->
+                                        <div class="cv-upload-area" id="cvUploadArea" role="button" tabindex="0"
+                                            aria-label="Click or drag and drop to upload CV"
+                                            onclick="document.getElementById('cvFileInput').click()">
+                                            <div class="cv-upload-icon">
+                                                <i class="fal fa-cloud-upload-alt"></i>
+                                            </div>
+                                            <p class="cv-upload-primary-text">Click to upload or drag and drop</p>
+                                            <p class="cv-upload-secondary-text" id="cvFileName">
+                                                PDF, DOC, DOCX (Max 5MB)
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-primary careers-submit-btn w-100 rounded-pill py-3 fz17 fw-bold">
+                                            <i class="fal fa-paper-plane me-2"></i> Submit Application
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+
+        <!-- Popular Search Panel -->
+        <div class="footer-popular-search">
+            <div class="container">
+                <h3 class="popular-search-title">
+                    <span class="text-accent">✦</span> Popular Search <span class="text-accent">✦</span>
+                </h3>
+                <div class="row g-4 mt-3">
+                    <!-- Top Areas -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Top Areas</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Most In-Demand Areas</a></li>
+                            <li><a href="#">Northern Areas</a></li>
+                            <li><a href="#">Southern Areas</a></li>
+                            <li><a href="#">Al Duhail</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Sale -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Sale</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Villas for Sale</a></li>
+                            <li><a href="#">Land for Sale</a></li>
+                            <li><a href="#">Recent price reductions on properties.</a></li>
+                            <li><a href="#">Residency Ownership</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Rent -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Rent</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Apartments for Rent</a></li>
+                            <li><a href="#">Villas for Rent</a></li>
+                            <li><a href="#">Office Spaces</a></li>
+                            <li><a href="#">Commercial</a></li>
+                        </ul>
+                    </div>
+                    <!-- Investments -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Investments</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Investment Properties with 9% Return</a></li>
+                            <li><a href="#">New Investment Properties with 5% to 6.9% Returns</a></li>
+                            <li><a href="#">Installment Projects</a></li>
+                            <li><a href="#">High ROI Properties</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="footer-tags mt-5">
+                    <a href="#" class="footer-tag">1 Bedroom</a>
+                    <a href="#" class="footer-tag">2 Bedroom</a>
+                    <a href="#" class="footer-tag">3 Bedroom Villas</a>
+                    <a href="#" class="footer-tag">Luxury Properties</a>
+                    <a href="#" class="footer-tag">Beachfront</a>
+                    <a href="#" class="footer-tag">Golf Course</a>
+                    <a href="#" class="footer-tag">Smart Homes</a>
+                    <a href="#" class="footer-tag">Pet-Friendly</a>
+                    <a href="#" class="footer-tag">Short-Term Rentals</a>
+                    <a href="#" class="footer-tag">Furnished</a>
+                    <a href="#" class="footer-tag">villa</a>
+                    <a href="#" class="footer-tag">office</a>
+                </div>
+            </div>
+        </div><!-- /.footer-popular-search -->
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-md-5">
+
+                    <!-- Col 1: Logo + Info -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-logo mb-4">
+                            <img src="images/logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-info-label"><strong>Our Address:</strong></p>
+                        <p class="footer-info-text">
+                            Bin Mahmoud,<br>
+                            Al Jazeera Al Arabiya Street,<br>
+                            Building 57, 6th Floor, Office 601,<br>
+                            Doha.
+                        </p>
+                        <p class="footer-info-text mt-3"><strong>Support 24/7:</strong> 1-555-678-8888</p>
+                        <p class="footer-info-text"><strong>Email Address:</strong> hi.avitex@gmail.com</p>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Quick Links</h5>
+                        <ul class="footer-link-list footer-link-list--main">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="careers.html">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Join Our Newsletter</h5>
+                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
+                            <button class="footer-newsletter-btn" aria-label="Subscribe">
+                                <i class="fal fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <p class="footer-newsletter-note mt-3">
+                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.footer-main -->
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+            <div
+                class="container d-flex align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
+                <p class="footer-copyright">© 2026 Darak Real Estate. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Snapchat"><i
+                            class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div><!-- /.footer-bar -->
+
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Careers Page: CV drag-drop interaction -->
+    <script>
+        (function () {
+            const uploadArea = document.getElementById('cvUploadArea');
+            const fileInput = document.getElementById('cvFileInput');
+            const fileNameEl = document.getElementById('cvFileName');
+
+            if (!uploadArea || !fileInput) return;
+
+            /* ---- Drag visual feedback ---- */
+            uploadArea.addEventListener('dragover', function (e) {
+                e.preventDefault();
+                this.classList.add('cv-upload-area--dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', function (e) {
+                if (!this.contains(e.relatedTarget)) {
+                    this.classList.remove('cv-upload-area--dragover');
+                }
+            });
+
+            uploadArea.addEventListener('drop', function (e) {
+                e.preventDefault();
+                this.classList.remove('cv-upload-area--dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    fileInput.files = files;
+                    updateFileName(files[0].name);
+                }
+            });
+
+            /* ---- Keyboard accessibility ---- */
+            uploadArea.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    fileInput.click();
+                }
+            });
+
+            /* ---- File chosen via dialog ---- */
+            fileInput.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    updateFileName(this.files[0].name);
+                }
+            });
+
+            function updateFileName(name) {
+                fileNameEl.innerHTML =
+                    '<i class="fas fa-check-circle text-success me-1"></i> <strong>' + name + '</strong>';
+                uploadArea.classList.add('cv-upload-area--file-chosen');
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

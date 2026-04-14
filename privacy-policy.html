@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Stay updated with the latest real estate trends, tips, and insights from Darak.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>FAQs — Darak Blog</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#termsSidebar" data-bs-smooth-scroll="true" tabindex="0">
+    <!-- ===== NAVBAR (same as index.html) ===== -->
+    <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <a class="navbar-brand d-flex align-items-center " href="index.html">
+                <img src="images/logo.png" class="img-fluid" alt="">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link" href="index.html">Home</a></li>
+                    <li><a class="custom-nav-link" href="#">About us</a></li>
+                    <li><a class="custom-nav-link active" href="properties.html">Properties</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black px-3 py-2 rounded" href="#">Consulting</a>
+                            </li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class=" text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-right ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Commercial</a></li>
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">Residential</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="#">Insights</a></li>
+                    <li><a class="custom-nav-link" href="#">Contact us</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3  ">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="#"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="#" class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">English
+                                    (EN)</a></li>
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">العربية
+                                    (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== INNER PAGE HERO ===== -->
+    <section
+        class="faq-hero inner-page-hero position-relative d-flex align-items-center justify-content-center text-center text-white overflow-hidden">
+        <!-- Background Image & Overlay -->
+        <div class="hero-bg-wrapper position-absolute inset-0 h-100 w-100">
+            <div class="hero-overlay-dark position-absolute inset-0 bg-black bg-opacity-50 w-100 h-100 z-1"></div>
+            <img src="images/faq-hero-bg.jpg" alt="Insights Hero" class="w-100 h-100 object-fit-cover">
+        </div>
+
+        <div class="container position-relative z-1 py-100">
+            <h1 class="display-4 fw-bold text-uppercase mb-3">Privacy Policy</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb custom-breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white text-opacity-75">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Privacy Policy</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <main class="container py-5 py-lg-100">
+        <div class="row g-5">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3">
+                <div class="terms-sidebar-wrapper sticky-top" style="top: 120px;">
+                    <ul id="termsSidebar" class="nav list-unstyled terms-sidebar-list d-flex flex-column gap-3">
+                        <li class="nav-item terms-nav-item"><a href="#terms" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">1. Terms</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#limitations" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">2. Limitations</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#revisions" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">3. Revisions And Errata</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#modifications" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">4. Site Terms Of Use Modifications</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#risks" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">5. Risks</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-lg-9">
+                <div class="terms-content">
+                    <h1 class="fw-bold text-dark mb-5" style="font-size: 32px;">Terms Of Use</h1>
+
+                    <!-- Section 1: Terms -->
+                    <section id="terms" class="mb-5">
+                        <h3 class="fw-bold text-dark mb-4">1. Terms</h3>
+                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim condimentum.</p>
+                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus. Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                    </section>
+
+                    <!-- Section 2: Limitations -->
+                    <section id="limitations" class="mb-5">
+                        <h3 class="fw-bold text-dark mb-4 fz24">2. Limitations</h3>
+                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4 ps-3">
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
+                            </li>
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Etiam eleifend metus at nunc ultricies facilisis.</span>
+                            </li>
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</span>
+                            </li>
+                        </ul>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                    </section>
+
+                    <!-- Section 3: Revisions And Errata -->
+                    <section id="revisions" class="mb-5">
+                        <h3 class="fw-bold text-dark mb-4 fz24">3. Revisions And Errata</h3>
+                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim condimentum.</p>
+                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus. Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                    </section>
+
+                    <!-- Section 4: Site Terms Of Use Modifications -->
+                    <section id="modifications" class="mb-5">
+                        <h3 class="fw-bold text-dark mb-4 fz24">4. Site Terms Of Use Modifications</h3>
+                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4 ps-3">
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
+                            </li>
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Etiam eleifend metus at nunc ultricies facilisis.</span>
+                            </li>
+                            <li class="text-muted fz14 d-flex gap-2 align-items-start">
+                                <span class="text-dark">·</span>
+                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</span>
+                            </li>
+                        </ul>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                    </section>
+
+                    <!-- Section 5: Risks -->
+                    <section id="risks">
+                        <h3 class="fw-bold text-dark mb-4 fz24">5. Risks</h3>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+
+        <!-- Popular Search Panel -->
+        <div class="footer-popular-search">
+            <div class="container">
+                <h3 class="popular-search-title">
+                    <span class="text-accent">✦</span> Popular Search <span class="text-accent">✦</span>
+                </h3>
+                <div class="row g-4 mt-3">
+                    <!-- Top Areas -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Top Areas</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Most In-Demand Areas</a></li>
+                            <li><a href="#">Northern Areas</a></li>
+                            <li><a href="#">Southern Areas</a></li>
+                            <li><a href="#">Al Duhail</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Sale -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Sale</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Villas for Sale</a></li>
+                            <li><a href="#">Land for Sale</a></li>
+                            <li><a href="#">Recent price reductions on properties.</a></li>
+                            <li><a href="#">Residency Ownership</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Rent -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Rent</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Apartments for Rent</a></li>
+                            <li><a href="#">Villas for Rent</a></li>
+                            <li><a href="#">Office Spaces</a></li>
+                            <li><a href="#">Commercial</a></li>
+                        </ul>
+                    </div>
+                    <!-- Investments -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Investments</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Investment Properties with 9% Return</a></li>
+                            <li><a href="#">New Investment Properties with 5% to 6.9% Returns</a></li>
+                            <li><a href="#">Installment Projects</a></li>
+                            <li><a href="#">High ROI Properties</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="footer-tags mt-5">
+                    <a href="#" class="footer-tag">1 Bedroom</a>
+                    <a href="#" class="footer-tag">2 Bedroom</a>
+                    <a href="#" class="footer-tag">3 Bedroom Villas</a>
+                    <a href="#" class="footer-tag">Luxury Properties</a>
+                    <a href="#" class="footer-tag">Beachfront</a>
+                    <a href="#" class="footer-tag">Golf Course</a>
+                    <a href="#" class="footer-tag">Smart Homes</a>
+                    <a href="#" class="footer-tag">Pet-Friendly</a>
+                    <a href="#" class="footer-tag">Short-Term Rentals</a>
+                    <a href="#" class="footer-tag">Furnished</a>
+                    <a href="#" class="footer-tag">villa</a>
+                    <a href="#" class="footer-tag">office</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-md-5">
+
+                    <!-- Col 1: Logo + Info -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-logo mb-4">
+                            <img src="images/logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-info-label"><strong>Our Address:</strong></p>
+                        <p class="footer-info-text">
+                            Bin Mahmoud,<br>
+                            Al Jazeera Al Arabiya Street,<br>
+                            Building 57, 6th Floor, Office 601,<br>
+                            Doha.
+                        </p>
+                        <p class="footer-info-text mt-3"><strong>Support 24/7:</strong> 1-555-678-8888</p>
+                        <p class="footer-info-text"><strong>Email Address:</strong> hi.avitex@gmail.com</p>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Quick Links</h5>
+                        <ul class="footer-link-list footer-link-list--main">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">insights</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Join Our Newsletter</h5>
+                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
+                            <button class="footer-newsletter-btn" aria-label="Subscribe">
+                                <i class="fal fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <p class="footer-newsletter-note mt-3">
+                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+            <div
+                class="container d-flex align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
+                <p class="footer-copyright">© 2026 Darak Real Estate. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Snapchat"><i
+                            class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

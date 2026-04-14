@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="About Darak Real Estate - Your trusted partner in finding your dream home.">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Add Property | Darak</title>
+</head>
+
+<body>
+
+    <!-- Transparent Navbar -->
+    <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <a class="navbar-brand d-flex align-items-center " href="index.html">
+                <img src="../images/logo.png" class="img-fluid" alt="Darak Logo">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link" href="index.html">الرئيسية</a></li>
+                    <li><a class="custom-nav-link active" href="about.html">من نحن</a></li>
+                    <li><a class="custom-nav-link" href="#">العقارات</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black px-3 py-2 rounded" href="#">الاستشارات</a>
+                            </li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class=" text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-left ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">تجاري</a></li>
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">سكني</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="#">رؤى</a></li>
+                    <li><a class="custom-nav-link" href="#">اتصل بنا</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3  ">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="#"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="#" class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">English
+                                    (EN)</a></li>
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">العربية
+                                    (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section 1: Inner Page Hero -->
+        <section class="about-hero position-relative">
+            <div class="container position-relative z-index-2">
+                <div class="row align-items-center">
+                    <!-- Left Content Column -->
+                    <div class="col-lg-8">
+                        <div class="about-hero-content py-5">
+                            <span
+                                class="about-hero-subtitle d-block mb-3 d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill">
+                                <i class="fas fa-home"></i> Add Property
+                            </span>
+                            <h1 class="about-hero-title mb-4">
+                                LIST YOUR PROPERTY
+                            </h1>
+                            <p class="about-hero-text text-white opacity-75 fz18">
+                                Darak from as low as per day with limited time offer discount
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Column (Badge Only) -->
+                    <div class="col-lg-4 text-center">
+                        <div class="about-hero-badge-wrap add-property-badge">
+                            <svg viewBox="0 0 100 100" class="circular-text-svg">
+                                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                    fill="transparent" />
+                                <text font-size="8" font-weight="bold" fill="white" letter-spacing="2">
+                                    <textPath xlink:href="#circlePath">
+                                        THE BEST PROPERTY PLATFORM • THE BEST PROPERTY PLATFORM •
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="badge-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Video Carousel -->
+        <section class="py-100 bg-white">
+            <div class="container">
+                <div class="mb-5">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-diamond text-primary me-2 fz12"></i>
+                        <span class="text-primary fw-bold">List Your Property With Darak Real Estate</span>
+                    </div>
+                    <h2 class="text-primary fw-bolder fz40 col-lg-6">Turn your property into a successful deal with us
+                    </h2>
+                </div>
+
+                <div class="swiper video-carousel-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
+                                <div class="video-thumbnail-overlay"></div>
+                                <div class="video-top-badges">
+                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 12.5K</div>
+                                </div>
+                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                    <i class="fas fa-play ms-1"></i>
+                                </button>
+                                <h4 class="video-thumbnail-title">Modern Kitchen Masterpiece</h4>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-thumbnail-card"
+                                style="background-image: url('images/beautiful-modern-kitchen-in-luxury-contemporary-ho-2022-12-13-05-00-23-utc 1.png');">
+                                <div class="video-thumbnail-overlay"></div>
+                                <div class="video-top-badges">
+                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 8.2K</div>
+                                </div>
+                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                    <i class="fas fa-play ms-1"></i>
+                                </button>
+                                <h4 class="video-thumbnail-title">Luxury Penthouse Views</h4>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-thumbnail-card" style="background-image: url('images/property-1.png');">
+                                <div class="video-thumbnail-overlay"></div>
+                                <div class="video-top-badges">
+                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 15K</div>
+                                </div>
+                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                    <i class="fas fa-play ms-1"></i>
+                                </button>
+                                <h4 class="video-thumbnail-title">Spacious Family Villa</h4>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
+                                <div class="video-thumbnail-overlay"></div>
+                                <div class="video-top-badges">
+                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 4.1K</div>
+                                </div>
+                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                    <i class="fas fa-play ms-1"></i>
+                                </button>
+                                <h4 class="video-thumbnail-title">Contemporary Office Space</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Feature Steps Grid -->
+        <section class="mb-5 pb-5 bg-white">
+            <div class="container">
+                <div class="mb-5">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-diamond text-primary me-2 fz12"></i>
+                        <span class="text-primary fw-bold">Darak Features</span>
+                    </div>
+                    <h2 class="text-primary fw-bolder fz40 col-lg-6">Darak stands out for excellence and innovation.
+                    </h2>
+                </div>
+
+                <div class="row g-4 align-items-stretch">
+                    <!-- Step 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-step-card bg-light">
+                            <div class="feature-step-number">1.</div>
+                            <h3 class="feature-step-title mb-3">Client Database</h3>
+                            <p class="feature-step-text">Our active database helps close deals in all property types:
+                                residential, commercial, and industrial. We bring the market to you.</p>
+                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-step-card bg-accent">
+                            <div class="feature-step-number">2.</div>
+                            <h3 class="feature-step-title mb-3">Sales Team</h3>
+                            <p class="feature-step-text">A strong, academically and practically trained sales team that
+                                knows how to create deals and close them efficiently.</p>
+                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-step-card bg-primary">
+                            <div class="feature-step-number">3.</div>
+                            <h3 class="feature-step-title mb-3">Advertising</h3>
+                            <p class="feature-step-text">Find your perfect rental. Browse listings tailored to fit your
+                                lifestyle with ease, comfort, and total peace of mind.</p>
+                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-step-card bg-light">
+                            <div class="feature-step-number">4.</div>
+                            <h3 class="feature-step-title mb-3">Speed</h3>
+                            <p class="feature-step-text">Discover your dream home. Explore with expert guidance for a
+                                smooth experience, from start to finish confidently.</p>
+                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Top Properties (Best Property Value) -->
+        <section class="best-property-value-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="bpv-header-subtitle">TOP PROPERTIES</span>
+                    <h2 class="bpv-header-title">Best Property Value</h2>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper bpv-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> NEW LISTING</div>
+                                    <div class="property-badge-bottom">$3,200</div>
+                                    <img src="../images/albert-hyseni-Pe33QUcC__I-unsplash.jpg" alt="Property"
+                                        class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Condo in Downtown</h4>
+                                    <p class="property-address">58 Maple St</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 2 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 1 Bath</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 850 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> LUXURY</div>
+                                    <div class="property-badge-bottom">$1,200,000</div>
+                                    <img src="../images/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg" alt="Property"
+                                        class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Penthouse in the City</h4>
+                                    <p class="property-address">101 Skyline Blvd</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 4 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 3 Baths</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 3,200 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> INVESTMENT</div>
+                                    <div class="property-badge-bottom">$850,000</div>
+                                    <img src="../images/property-1.png" alt="Property" class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Duplex in Suburbs</h4>
+                                    <p class="property-address">45 Oak St</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 5 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 3 Baths</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 1,800 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> NEW LISTING</div>
+                                    <div class="property-badge-bottom">$3,200</div>
+                                    <img src="../images/albert-hyseni-Pe33QUcC__I-unsplash.jpg" alt="Property"
+                                        class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Condo in Downtown</h4>
+                                    <p class="property-address">58 Maple St</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 2 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 1 Bath</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 850 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 (Duplicated for loop) -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> LUXURY</div>
+                                    <div class="property-badge-bottom">$950,000</div>
+                                    <img src="../images/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg" alt="Property"
+                                        class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Modern Loft</h4>
+                                    <p class="property-address">77 Urban Lane</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 3 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 2 Baths</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 1,500 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 (Duplicated for loop) -->
+                        <div class="swiper-slide">
+                            <div class="property-card m-0">
+                                <div class="property-card-img-wrapper">
+                                    <div class="property-badge-top"><i class="fal fa-bolt"></i> INVESTMENT</div>
+                                    <div class="property-badge-bottom">$500,000</div>
+                                    <img src="../images/property-1.png" alt="Property" class="property-card-img">
+                                </div>
+                                <div class="property-card-body">
+                                    <h4 class="property-title">Garden Apartment</h4>
+                                    <p class="property-address">12 Green Way</p>
+                                    <div class="property-stats">
+                                        <div class="property-stat-item"><i class="fal fa-bed"></i> 2 Beds</div>
+                                        <div class="property-stat-item"><i class="fal fa-bath"></i> 1 Bath</div>
+                                        <div class="property-stat-item"><i class="fal fa-vector-square"></i> 950 sqft
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-card-divider"></div>
+                                <div class="property-card-footer">
+                                    <span class="property-status">للبيع</span>
+                                    <div class="property-actions">
+                                        <a href="#" class="property-btn-details"><i
+                                                class="fal fa-external-link-alt fz12"></i> Details</a>
+                                        <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                        <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Controls (Pixel Perfect Design) -->
+                    <div class="bpv-controls-wrapper mt-5">
+                        <div class="bpv-pagination-fraction w-auto"></div>
+                        <div class="bpv-progressbar w-100 mx-3">
+                            <div class="bpv-progressbar-fill"></div>
+                        </div>
+                        <div class="bpv-nav-btns">
+                            <button class="bpv-nav-btn bpv-button-prev p-0 m-0"><i
+                                    class="fal fa-chevron-right"></i></button>
+                            <span class="bpv-nav-divider mx-2">|</span>
+                            <button class="bpv-nav-btn bpv-button-next p-0 m-0"><i
+                                    class="fal fa-chevron-left"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- CTA Connect Section -->
+        <section class="cta-connect-section py-100">
+            <div class="container text-center">
+                <h2 class="cta-connect-title text-primary-dark fz60 mb-5 wow fadeInUp">
+                    READY TO CONNECT? REACH OUT TO <br class="d-none d-lg-block"> DARAK REAL ESTATE TODAY!
+                </h2>
+                <div class="cta-connect-wrapper mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="contact-us.html" class="cta-connect-link">
+                        <div class="cta-image-container">
+                            <img src="../images/contact-bg.png" alt="Connect with Darak" class="img-fluid">
+                            <div class="cta-gradient-overlay"></div>
+                            <div class="cta-chat-btn">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="aboutVideoModal" tabindex="-1" aria-labelledby="aboutVideoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 p-0 mb-2">
+                    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 shadow-lg">
+                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-lg">
+                        <!-- Replace src with your actual video link (e.g. YouTube embed or local MP4) -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Darak About Us Video"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+
+        <!-- Popular Search Panel -->
+        <div class="footer-popular-search">
+            <div class="container">
+                <h3 class="popular-search-title">
+                    <span class="text-accent">✦</span> Popular Search <span class="text-accent">✦</span>
+                </h3>
+                <div class="row g-4 mt-3">
+                    <!-- Top Areas -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Top Areas</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Most In-Demand Areas</a></li>
+                            <li><a href="#">Northern Areas</a></li>
+                            <li><a href="#">Southern Areas</a></li>
+                            <li><a href="#">Al Duhail</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Sale -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Sale</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Villas for Sale</a></li>
+                            <li><a href="#">Land for Sale</a></li>
+                            <li><a href="#">Recent price reductions on properties.</a></li>
+                            <li><a href="#">Residency Ownership</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Rent -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Rent</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Apartments for Rent</a></li>
+                            <li><a href="#">Villas for Rent</a></li>
+                            <li><a href="#">Office Spaces</a></li>
+                            <li><a href="#">تجاري</a></li>
+                        </ul>
+                    </div>
+                    <!-- Investments -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Investments</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Investment Properties with 9% Return</a></li>
+                            <li><a href="#">New Investment Properties with 5% to 6.9% Returns</a></li>
+                            <li><a href="#">Installment Projects</a></li>
+                            <li><a href="#">High ROI Properties</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="footer-tags mt-5">
+                    <a href="#" class="footer-tag">1 Bedroom</a>
+                    <a href="#" class="footer-tag">2 Bedroom</a>
+                    <a href="#" class="footer-tag">3 Bedroom Villas</a>
+                    <a href="#" class="footer-tag">Luxury Properties</a>
+                    <a href="#" class="footer-tag">Beachfront</a>
+                    <a href="#" class="footer-tag">Golf Course</a>
+                    <a href="#" class="footer-tag">Smart Homes</a>
+                    <a href="#" class="footer-tag">Pet-Friendly</a>
+                    <a href="#" class="footer-tag">Short-Term Rentals</a>
+                    <a href="#" class="footer-tag">Furnished</a>
+                    <a href="#" class="footer-tag">villa</a>
+                    <a href="#" class="footer-tag">office</a>
+                </div>
+            </div>
+        </div><!-- /.footer-popular-search -->
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-md-5">
+
+                    <!-- Col 1: Logo + Info -->
+                    <div class="col-lg-4 col-md-12">
+                        <!-- Logo placeholder -->
+                        <div class="footer-logo mb-4">
+                            <img src="../images/logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-info-label"><strong>Our Address:</strong></p>
+                        <p class="footer-info-text">
+                            Bin Mahmoud,<br>
+                            Al Jazeera Al Arabiya Street,<br>
+                            Building 57, 6th Floor, Office 601,<br>
+                            Doha.
+                        </p>
+                        <p class="footer-info-text mt-3"><strong>Support 24/7:</strong> 1-555-678-8888</p>
+                        <p class="footer-info-text"><strong>Email Address:</strong> hi.avitex@gmail.com</p>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Quick Links</h5>
+                        <ul class="footer-link-list footer-link-list--main">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">insights</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Join Our Newsletter</h5>
+                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
+                            <button class="footer-newsletter-btn" aria-label="Subscribe">
+                                <i class="fal fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <p class="footer-newsletter-note mt-3">
+                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.footer-main -->
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+            <div
+                class="container d-flex align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
+                <p class="footer-copyright">© 2026 Darak Real Estate. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Snapchat"><i
+                            class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div><!-- /.footer-bar -->
+
+    </footer>
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

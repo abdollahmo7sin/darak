@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Browse all Darak properties — filter, compare, and find your perfect home.">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Property Listings — Darak</title>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR (Custom primary) ===== -->
+    <nav class="custom-navbar custom-primary    w-100   py-3">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <a class="navbar-brand d-flex align-items-center " href="index.html">
+                <img src="../images/header-logo-blue.png" class="img-fluid" alt="">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link" href="index.html">الرئيسية</a></li>
+                    <li><a class="custom-nav-link" href="#">من نحن</a></li>
+                    <li><a class="custom-nav-link active" href="properties.html">العقارات</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black px-3 py-2 rounded" href="#">الاستشارات</a>
+                            </li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class=" text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-left ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">تجاري</a></li>
+                                    <li><a class=" text-black px-3 py-2 rounded" href="#">سكني</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="#">رؤى</a></li>
+                    <li><a class="custom-nav-link" href="#">اتصل بنا</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3  ">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="#"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="#" class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">English
+                                    (EN)</a></li>
+                            <li><a class=" text-black d-block px-3 py-2 rounded" href="#">العربية
+                                    (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <!-- ===== MAIN LISTINGS CONTENT ===== -->
+    <section class="listings-section py-5">
+        <div class="container">
+
+            <!-- Top Action Bar -->
+            <div class="listings-action-bar d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+                <!-- Left: Breadcrumb + Title -->
+                <div class="listings-action-bar-start">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb custom-breadcrumb mb-2">
+                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Property</li>
+                        </ol>
+                    </nav>
+                    <h2 class="listings-page-title mb-0">Property Listings</h2>
+                </div>
+
+                <!-- Right: View Toggles + Compare + Sort -->
+                <div class="listings-action-bar-end d-flex align-items-center gap-2 flex-wrap">
+                    <!-- View Toggles -->
+                    <div class="listings-view-toggle d-flex" role="group" aria-label="View toggle">
+                        <button class="listings-view-btn active" id="listViewBtn" aria-label="List view">
+                            <i class="fal fa-list"></i>
+                        </button>
+                        <button class="listings-view-btn" id="gridViewBtn" aria-label="Grid view">
+                            <i class="fal fa-th-large"></i>
+                        </button>
+                    </div>
+
+                    <!-- Compare Properties Button -->
+                    <a href="#" class="btn btn-primary listings-compare-btn d-flex align-items-center gap-2">
+                        <i class="fal fa-exchange-alt"></i> Compare Properties
+                    </a>
+
+                    <!-- Sort Dropdown -->
+                    <select class="form-select listings-sort-select" id="listingSortSelect">
+                        <option selected>Sort by (Default)</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Main Two-Column Layout -->
+            <div class="row g-4">
+
+                <!-- Left Column: Property Cards -->
+                <div class="col-lg-8">
+                    <div id="propertiesList" class="properties-container list-view d-flex flex-column gap-4">
+
+                        <!-- Property List Card 1 (For Rent) -->
+                        <div class="property-list-card-wrapper">
+                            <div class="property-card property-list-card">
+                                <div class="property-list-card-inner d-flex flex-column flex-md-row">
+                                    <!-- Image Side -->
+                                    <div class="property-list-card-img-wrapper">
+                                        <img src="../images/albert-hyseni-Pe33QUcC__I-unsplash.jpg"
+                                            alt="Modern Family Home" class="property-card-img">
+                                        <button class="property-list-fav-btn active-accent"
+                                            aria-label="Add to favourites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Content Side -->
+                                    <div class="property-list-card-content d-flex flex-column">
+                                        <!-- Header: Price + Badges -->
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+                                            <span class="property-list-price">$3,200<span
+                                                    class="property-list-price-period">/month</span></span>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <span class="property-list-badge property-list-badge--rent">For
+                                                    Rent</span>
+                                                <span class="property-list-badge property-list-badge--type">House</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Title & Address -->
+                                        <h4 class="property-title mb-1">Modern Family Home with Garden</h4>
+                                        <p class="property-address mb-3">58 Maple St, Al Rayyan, Doha, Qatar</p>
+
+                                        <!-- Stats (reused) -->
+                                        <div class="property-stats mb-auto">
+                                            <div class="property-stat-item"><i class="fal fa-bed"></i> 3 Beds</div>
+                                            <div class="property-stat-item"><i class="fal fa-bath"></i> 2 Baths</div>
+                                            <div class="property-stat-item"><i class="fal fa-vector-square"></i> 1,150
+                                                Sqft</div>
+                                        </div>
+
+                                        <!-- Footer: Action Buttons -->
+                                        <div class="property-list-card-actions d-flex gap-2 mt-3">
+                                            <a href="property-single.html"
+                                                class="btn listings-btn-quickview flex-fill">Quick View</a>
+                                            <a href="#" class="btn listings-outline-btn flex-fill">Compare</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property List Card 2 (For Sale) -->
+                        <div class="property-list-card-wrapper">
+                            <div class="property-card property-list-card">
+                                <div class="property-list-card-inner d-flex flex-column flex-md-row">
+                                    <div class="property-list-card-img-wrapper">
+                                        <img src="../images/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg"
+                                            alt="Luxury Penthouse Suite" class="property-card-img">
+                                        <button class="property-list-fav-btn active-accent"
+                                            aria-label="Add to favourites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-list-card-content d-flex flex-column">
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+                                            <span class="property-list-price">$1,200,000</span>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <span class="property-list-badge property-list-badge--sale">For
+                                                    Sale</span>
+                                                <span
+                                                    class="property-list-badge property-list-badge--type">Office</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="property-title mb-1">Luxury Penthouse Suite</h4>
+                                        <p class="property-address mb-3">101 Skyline Blvd, The Pearl, Doha, Qatar</p>
+                                        <div class="property-stats mb-auto">
+                                            <div class="property-stat-item"><i class="fal fa-bed"></i> 4 Beds</div>
+                                            <div class="property-stat-item"><i class="fal fa-bath"></i> 3 Baths</div>
+                                            <div class="property-stat-item"><i class="fal fa-vector-square"></i> 3,200
+                                                Sqft</div>
+                                        </div>
+                                        <div class="property-list-card-actions d-flex gap-2 mt-3">
+                                            <a href="property-single.html"
+                                                class="btn listings-btn-quickview flex-fill">Quick View</a>
+                                            <a href="#" class="btn listings-outline-btn flex-fill">Compare</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property List Card 3 (For Sale) -->
+                        <div class="property-list-card-wrapper">
+                            <div class="property-card property-list-card">
+                                <div class="property-list-card-inner d-flex flex-column flex-md-row">
+                                    <div class="property-list-card-img-wrapper">
+                                        <img src="../images/property-1.png" alt="Suburban Family Duplex"
+                                            class="property-card-img">
+                                        <button class="property-list-fav-btn active-accent"
+                                            aria-label="Add to favourites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-list-card-content d-flex flex-column">
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+                                            <span class="property-list-price">$850,000</span>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <span class="property-list-badge property-list-badge--sale">For
+                                                    Sale</span>
+                                                <span class="property-list-badge property-list-badge--type">Villa</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="property-title mb-1">Suburban Family Duplex</h4>
+                                        <p class="property-address mb-3">45 Oak St, Al Wakrah, Doha, Qatar</p>
+                                        <div class="property-stats mb-auto">
+                                            <div class="property-stat-item"><i class="fal fa-bed"></i> 5 Beds</div>
+                                            <div class="property-stat-item"><i class="fal fa-bath"></i> 3 Baths</div>
+                                            <div class="property-stat-item"><i class="fal fa-vector-square"></i> 1,800
+                                                Sqft</div>
+                                        </div>
+                                        <div class="property-list-card-actions d-flex gap-2 mt-3">
+                                            <a href="property-single.html"
+                                                class="btn listings-btn-quickview flex-fill">Quick View</a>
+                                            <a href="#" class="btn listings-outline-btn flex-fill">Compare</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property List Card 4 (For Rent) -->
+                        <div class="property-list-card-wrapper">
+                            <div class="property-card property-list-card">
+                                <div class="property-list-card-inner d-flex flex-column flex-md-row">
+                                    <div class="property-list-card-img-wrapper">
+                                        <img src="../images/samson-ZGjbiukp_-A-unsplash.jpg" alt="Waterfront Villa"
+                                            class="property-card-img">
+                                        <button class="property-list-fav-btn" aria-label="Add to favourites">
+                                            <i class="fal fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-list-card-content d-flex flex-column">
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+                                            <span class="property-list-price">$5,500<span
+                                                    class="property-list-price-period">/month</span></span>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <span class="property-list-badge property-list-badge--rent">For
+                                                    Rent</span>
+                                                <span
+                                                    class="property-list-badge property-list-badge--type">Apartment</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="property-title mb-1">Waterfront Villa with Private Pool</h4>
+                                        <p class="property-address mb-3">12 Marine Dr, Lusail, Doha, Qatar</p>
+                                        <div class="property-stats mb-auto">
+                                            <div class="property-stat-item"><i class="fal fa-bed"></i> 6 Beds</div>
+                                            <div class="property-stat-item"><i class="fal fa-bath"></i> 4 Baths</div>
+                                            <div class="property-stat-item"><i class="fal fa-vector-square"></i> 4,500
+                                                Sqft</div>
+                                        </div>
+                                        <div class="property-list-card-actions d-flex gap-2 mt-3">
+                                            <a href="property-single.html"
+                                                class="btn listings-btn-quickview flex-fill">Quick View</a>
+                                            <a href="#" class="btn listings-outline-btn flex-fill">Compare</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property List Card 5 (For Sale) -->
+                        <div class="property-list-card-wrapper">
+                            <div class="property-card property-list-card">
+                                <div class="property-list-card-inner d-flex flex-column flex-md-row">
+                                    <div class="property-list-card-img-wrapper">
+                                        <img src="../images/beautiful-modern-kitchen-in-luxury-contemporary-ho-2022-12-13-05-00-23-utc 1.png"
+                                            alt="Downtown Condo" class="property-card-img">
+                                        <button class="property-list-fav-btn" aria-label="Add to favourites">
+                                            <i class="fal fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-list-card-content d-flex flex-column">
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+                                            <span class="property-list-price">$420,000</span>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <span class="property-list-badge property-list-badge--sale">For
+                                                    Sale</span>
+                                                <span class="property-list-badge property-list-badge--type">Condo</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="property-title mb-1">Downtown Studio Condo</h4>
+                                        <p class="property-address mb-3">77 Central Ave, West Bay, Doha, Qatar</p>
+                                        <div class="property-stats mb-auto">
+                                            <div class="property-stat-item"><i class="fal fa-bed"></i> 1 Bed</div>
+                                            <div class="property-stat-item"><i class="fal fa-bath"></i> 1 Bath</div>
+                                            <div class="property-stat-item"><i class="fal fa-vector-square"></i> 650
+                                                Sqft</div>
+                                        </div>
+                                        <div class="property-list-card-actions d-flex gap-2 mt-3">
+                                            <a href="property-single.html"
+                                                class="btn listings-btn-quickview flex-fill">Quick View</a>
+                                            <a href="#" class="btn listings-outline-btn flex-fill">Compare</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Property listings pagination" class="mt-5">
+                        <ul class="pagination custom-pagination border-0">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <i class="fal fa-chevron-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <i class="fal fa-chevron-left"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Right Column: Filters Sidebar -->
+                <div class="col-lg-4">
+                    <div class="filter-sidebar-panel border rounded-4 p-4 bg-white shadow-sm position-sticky top-0">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div>
+                                <h5 class="fw-bold mb-0 text-dark">Filters</h5>
+                                <p class="text-muted fz12 mb-0">Confirm your search</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-link text-primary text-decoration-none p-0 fz13 fw-bold"><i
+                                        class="fal fa-times"></i> Reset</button>
+                                <button type="button" class="btn-close d-lg-none" id="filterSidebarClose"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold fz14 mb-2"><i class="fal fa-compass text-primary me-2 fz16"></i> Search
+                                by Qatar MAP</h6>
+                            <img src="../images/placeholder-map.png" alt="Qatar Map" class="img-fluid mx-auto d-block ">
+                        </div>
+
+                        <!-- Property Status Tabs -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold fz14 mb-3"><i class="fal fa-home-alt text-primary me-2 fz16"></i>
+                                Property Status</h6>
+                            <div class="sidebar-tab-pill-container p-1 rounded-pill bg-light d-flex">
+                                <button class="btn sidebar-tab-pill active" data-filter="buy">شراء</button>
+                                <button class="btn sidebar-tab-pill" data-filter="rent">إيجار</button>
+                                <button class="btn sidebar-tab-pill" data-filter="investment">استثمار</button>
+                            </div>
+                        </div>
+
+                        <!-- Basic Filters -->
+                        <div class="filter-section-box bg-light border p-3 rounded-4 mb-4">
+                            <h6 class="fw-bold text-uppercase fz12 mb-3">BASIC FILTERS</h6>
+                            <p class="fz13 fw-bold mb-2 text-dark">What are you looking for?</p>
+                            <div class="sidebar-tab-pill-container p-1 rounded-pill bg-white border  d-flex mb-4">
+                                <button class="btn sidebar-tab-pill active" data-type="units">Units</button>
+                                <button class="btn sidebar-tab-pill" data-type="projects">Projects</button>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold"><i
+                                        class="fal fa-map-marker-alt text-primary me-1"></i> Location</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option>Doha/St</option>
+                                </select>
+                                <div class="d-flex gap-2 mt-2 flex-wrap">
+                                    <span class="sidebar-blue-tag">Doha</span>
+                                    <span class="sidebar-blue-tag ">Elsahmel</span>
+                                </div>
+                            </div>
+
+                            <!-- Area Selection -->
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold">Area</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option>El Elsahmel</option>
+                                </select>
+                                <div class="d-flex gap-2 mt-2 flex-wrap">
+                                    <span class="sidebar-blue-tag">Doha</span>
+                                    <span class="sidebar-blue-tag  ">Elsahmel</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold">نوع العقار</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold">License</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+
+                            <div class="mb-1">
+                                <label class="form-label fz12 text-muted fw-bold">Square Meters</label>
+                                <div class="row g-2">
+                                    <div class="col-6"><input type="text" class="form-control bg-white text-center fz13"
+                                            placeholder="Min m²"></div>
+                                    <div class="col-6"><input type="text" class="form-control bg-white text-center fz13"
+                                            placeholder="Max m²"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Section -->
+                        <div class="filter-section-box bg-light border p-3 rounded-4 mb-4">
+                            <h6 class="fw-bold text-uppercase fz12 mb-3"><i
+                                    class="fal fa-usd-circle text-primary me-1 fz14"></i> PRICE</h6>
+
+                            <div class="mb-5">
+                                <label class="form-label fz12 text-muted fw-bold">نطاق السعر</label>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6"><input type="number" id="price-min"
+                                            class="form-control bg-white text-center fz13" placeholder="Min"></div>
+                                    <div class="col-6"><input type="number" id="price-max"
+                                            class="form-control bg-white text-center fz13" placeholder="Max"></div>
+                                </div>
+                                <!-- Range Slider -->
+                                <div class="px-2">
+                                    <div id="price-range-slider" class="custom-noui-slider"></div>
+                                    <div class="d-flex justify-content-between fz11 text-muted mt-3 fw-bold">
+                                        <span class="text-primary">$0</span>
+                                        <span class="text-primary text-decoration-underline">Up to $10.0M</span>
+                                        <span class="text-primary">$100M</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-5">
+                                <label class="form-label fz12 text-muted fw-bold">Price Per Foot (yearly)</label>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6"><input type="number" id="ppf-min"
+                                            class="form-control bg-white text-center fz13" placeholder="Min"></div>
+                                    <div class="col-6"><input type="number" id="ppf-max"
+                                            class="form-control bg-white text-center fz13" placeholder="Max"></div>
+                                </div>
+                                <!-- Range Slider -->
+                                <div class="px-2">
+                                    <div id="ppf-range-slider" class="custom-noui-slider"></div>
+                                    <div class="d-flex justify-content-between fz11 text-muted mt-3 fw-bold">
+                                        <span class="text-primary">$0</span>
+                                        <span class="text-primary text-decoration-underline">Up to $10.0M</span>
+                                        <span class="text-primary">$100M</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-1">
+                                <label class="form-label fz12 text-muted fw-bold">Return On Investment / ROI</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Rooms & Spaces -->
+                        <div class="filter-section-box bg-light border p-3 rounded-4 mb-4">
+                            <h6 class="fw-bold text-uppercase fz12 mb-3"><i
+                                    class="fal fa-bed text-primary me-1 fz14"></i> ROOMS & SPACES</h6>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <label class="form-label fz12 text-muted fw-bold">Bedrooms</label>
+                                    <input type="number" class="form-control bg-white text-center mb-2 fz13"
+                                        placeholder="Min">
+                                    <input type="number" class="form-control bg-white text-center fz13"
+                                        placeholder="Max">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fz12 text-muted fw-bold">Bathrooms</label>
+                                    <input type="number" class="form-control bg-white text-center mb-2 fz13"
+                                        placeholder="Min">
+                                    <input type="number" class="form-control bg-white text-center fz13"
+                                        placeholder="Max">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold">Finishing</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fz12 text-muted fw-bold">Furnishing</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label fz12 text-muted fw-bold">Status</label>
+                                <select class="form-select form-control bg-white fz13">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Features -->
+                        <div class="filter-section-box bg-light border p-3 rounded-4 mb-4">
+                            <div class="accordion custom-accordion" id="advFeaturesAcc">
+                                <div class="accordion-item border-0 bg-transparent">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed p-0 bg-transparent shadow-none fz14 fw-bold text-dark d-flex align-items-center"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#advFeaturesCollapse">
+                                            <i class="fal fa-layer-group text-primary me-2 fz16"></i> Advanced Features
+                                        </button>
+                                    </h2>
+                                    <div id="advFeaturesCollapse" class="accordion-collapse collapse text-start"
+                                        data-bs-parent="#advFeaturesAcc">
+                                        <div class="accordion-body px-0 pt-4 pb-0">
+                                            <div class="mb-4">
+                                                <label class="form-label fz12 text-muted fw-bold"><i
+                                                        class="fal fa-eye text-primary me-1"></i> View</label>
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <div class="sidebar-check-item">
+                                                            <input class="form-check-input" type="checkbox" id="v1">
+                                                            <label class="form-check-label" for="v1">Sea View</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="sidebar-check-item">
+                                                            <input class="form-check-input" type="checkbox" id="v2">
+                                                            <label class="form-check-label" for="v2">City View</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="sidebar-check-item">
+                                                            <input class="form-check-input" type="checkbox" id="v3">
+                                                            <label class="form-check-label" for="v3">Garden View</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="sidebar-check-item">
+                                                            <input class="form-check-input" type="checkbox" id="v4">
+                                                            <label class="form-check-label" for="v4">Street View</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label class="form-label fz12 text-muted fw-bold">Amenities</label>
+                                                <div class="d-flex flex-column gap-2">
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am1">
+                                                        <label class="form-check-label" for="am1">Swimming pool</label>
+                                                    </div>
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am2">
+                                                        <label class="form-check-label" for="am2">Outdoor majlis</label>
+                                                    </div>
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am3">
+                                                        <label class="form-check-label" for="am3">Split AC</label>
+                                                    </div>
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am4">
+                                                        <label class="form-check-label" for="am4">Central AC</label>
+                                                    </div>
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am5">
+                                                        <label class="form-check-label" for="am5">Basement</label>
+                                                    </div>
+                                                    <div class="sidebar-check-item">
+                                                        <input class="form-check-input" type="checkbox" id="am6">
+                                                        <label class="form-check-label" for="am6">Elevator</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apply Button -->
+                        <button type="submit"
+                            class="btn btn-primary w-100 py-3 mt-2 fw-bold text-uppercase fz14 shadow-sm"
+                            style="border-radius: 12px;">Search Properties</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sidebar Mobile Toggle & Overlay -->
+    <div id="filterSidebarOverlay" class="filter-sidebar-overlay"></div>
+    <button id="filterSidebarToggle" class="btn btn-primary d-lg-none filter-mobile-fab shadow-lg animated fadeInUp">
+        <i class="fal fa-filter me-2 text-accent"></i> Filters
+    </button>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+
+        <!-- Popular Search Panel -->
+        <div class="footer-popular-search">
+            <div class="container">
+                <h3 class="popular-search-title">
+                    <span class="text-accent">✦</span> Popular Search <span class="text-accent">✦</span>
+                </h3>
+                <div class="row g-4 mt-3">
+                    <!-- Top Areas -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Top Areas</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Most In-Demand Areas</a></li>
+                            <li><a href="#">Northern Areas</a></li>
+                            <li><a href="#">Southern Areas</a></li>
+                            <li><a href="#">Al Duhail</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Sale -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Sale</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Villas for Sale</a></li>
+                            <li><a href="#">Land for Sale</a></li>
+                            <li><a href="#">Recent price reductions on properties.</a></li>
+                            <li><a href="#">Residency Ownership</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Rent -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Rent</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Apartments for Rent</a></li>
+                            <li><a href="#">Villas for Rent</a></li>
+                            <li><a href="#">Office Spaces</a></li>
+                            <li><a href="#">تجاري</a></li>
+                        </ul>
+                    </div>
+                    <!-- Investments -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Investments</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Investment Properties with 9% Return</a></li>
+                            <li><a href="#">New Investment Properties with 5% to 6.9% Returns</a></li>
+                            <li><a href="#">Installment Projects</a></li>
+                            <li><a href="#">High ROI Properties</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="footer-tags mt-5">
+                    <a href="#" class="footer-tag">1 Bedroom</a>
+                    <a href="#" class="footer-tag">2 Bedroom</a>
+                    <a href="#" class="footer-tag">3 Bedroom Villas</a>
+                    <a href="#" class="footer-tag">Luxury Properties</a>
+                    <a href="#" class="footer-tag">Beachfront</a>
+                    <a href="#" class="footer-tag">Golf Course</a>
+                    <a href="#" class="footer-tag">Smart Homes</a>
+                    <a href="#" class="footer-tag">Pet-Friendly</a>
+                    <a href="#" class="footer-tag">Short-Term Rentals</a>
+                    <a href="#" class="footer-tag">Furnished</a>
+                    <a href="#" class="footer-tag">villa</a>
+                    <a href="#" class="footer-tag">office</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-md-5">
+
+                    <!-- Col 1: Logo + Info -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-logo mb-4">
+                            <img src="../images/logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-info-label"><strong>Our Address:</strong></p>
+                        <p class="footer-info-text">
+                            Bin Mahmoud,<br>
+                            Al Jazeera Al Arabiya Street,<br>
+                            Building 57, 6th Floor, Office 601,<br>
+                            Doha.
+                        </p>
+                        <p class="footer-info-text mt-3"><strong>Support 24/7:</strong> 1-555-678-8888</p>
+                        <p class="footer-info-text"><strong>Email Address:</strong> hi.avitex@gmail.com</p>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Quick Links</h5>
+                        <ul class="footer-link-list footer-link-list--main">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">insights</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Join Our Newsletter</h5>
+                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
+                            <button class="footer-newsletter-btn" aria-label="Subscribe">
+                                <i class="fal fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <p class="footer-newsletter-note mt-3">
+                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+            <div
+                class="container d-flex align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
+                <p class="footer-copyright">© 2026 Darak Real Estate. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Snapchat"><i
+                            class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab switching logic for sidebar
+            document.querySelectorAll('.sidebar-tab-pill').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const container = this.closest('.sidebar-tab-pill-container');
+                    container.querySelectorAll('.sidebar-tab-pill').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Mobile Filter Sidebar Toggle Logic
+            const sidebarToggle = document.getElementById('filterSidebarToggle');
+            const sidebarClose = document.getElementById('filterSidebarClose');
+            const sidebarOverlay = document.getElementById('filterSidebarOverlay');
+            const sidebarPanel = document.querySelector('.filter-sidebar-panel');
+
+            function toggleSidebar(show) {
+                if (show) {
+                    sidebarPanel.classList.add('active');
+                    sidebarOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    sidebarPanel.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            sidebarToggle?.addEventListener('click', () => toggleSidebar(true));
+            sidebarClose?.addEventListener('click', () => toggleSidebar(false));
+            sidebarOverlay?.addEventListener('click', () => toggleSidebar(false));
+        });
+    </script>
+
+</body>
+
+</html>

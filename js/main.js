@@ -1,433 +1,507 @@
 jQuery(document).ready(function () {
+    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
 
+    // Unified Navbar Toggle
+    const navbarMenu = document.getElementById('navbarMenu');
+    const navbarItem = document.querySelector('.custom-navbar');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 
-    // toggle search form
-    const searchTrigger = document.querySelector('.search-icon'),
-        searchForm = document.querySelector('.search-form-wrapper');
-    searchTrigger.addEventListener('click', function (e) {
-        e.preventDefault();
-        this.classList.toggle('active');
-        searchForm.classList.toggle('active');
-    })
+    if (mobileMenuToggle && navbarMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isActive = navbarMenu.classList.toggle('active');
+            navbarItem.classList.toggle('mobile-active');
 
-    // nested nav mobile
-    if (jQuery(window).width() <= 992) {
-        jQuery(".menu-item-has-children").click(function () {
-            const $this = jQuery(this);
-            $this.children(".sub-menu").slideToggle(300);
-            $this.children("a").toggleClass("icon-rotate");
-            jQuery(".menu-item-has-children").not($this).children(".sub-menu").slideUp(300);
-            jQuery(".menu-item-has-children").not($this).children("a").removeClass("icon-rotate");
-        });
-    }
-
-    // ************************************************************************************************
-    // open and close sidebar
-
-    jQuery(".bars").on("click", function () {
-        jQuery(".line1").toggleClass("rotate-line1");
-        jQuery(".line2").toggleClass("hide-line2");
-        jQuery(".line3").toggleClass("rotate-line3");
-        jQuery(".navigation").toggleClass("open-sidebar");
-        jQuery("body").toggleClass("overflow-hidden");
-    });
-
-
-    // ************************************************************************************************
-    // show and hide to top button
-
-    jQuery(window).on("scroll", function () {
-        if (jQuery(window).scrollTop() > 100) {
-            jQuery(".up-btn").addClass("show");
-        }
-        if (jQuery(window).scrollTop() == 0) {
-            jQuery(".up-btn").removeClass("show");
-        }
-    });
-
-    jQuery(".up-btn").on("click", function () {
-        jQuery("html , body").animate({ scrollTop: 0 }, 0);
-    });
-
-
-
-    // ************************************************************************************************
-    // swiper slider
-
-
-    const specialitiesSlider = new Swiper(".specialities-slider", {
-        loop: true,
-        draggable: true,
-        autoplay: true,
-        spaceBetween: 45,
-        // navigation: {
-        //     nextEl: ".specialities-slider .swiper-button-next",
-        //     prevEl: ".specialities-slider .swiper-button-prev",
-        // },
-        pagination: {
-            el: ".specialities-slider .swiper-pagination",
-            clickable: true,
-        },
-
-        breakpoints: {
-            350: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-
-            },
-            500: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-            },
-            992: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-            },
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-            },
-        },
-
-    });
-    const teachersSlider = new Swiper(".teachers-slider", {
-        loop: true,
-        draggable: true,
-        autoplay: true,
-        spaceBetween: 45,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-
-        breakpoints: {
-            350: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-
-            },
-            500: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-            },
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-            },
-        },
-
-
-    });
-
-
-
-
-
-    /*Faq Accordion*/
-
-    $(".faq-title").on("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const $this = $(this);
-        const $content = $this.next('.faq-content');
-        const isCurrentlyActive = $this.hasClass("active");
-
-        // Close all other FAQ items first
-        $(".faq-title").not($this).removeClass("active");
-        $(".faq-content").not($content).slideUp(300);
-
-        // Toggle current item
-        if (!isCurrentlyActive) {
-            $this.addClass("active");
-            $content.slideDown(300);
-        } else {
-            $this.removeClass("active");
-            $content.slideUp(300);
-        }
-
-        return false;
-    });
-
-    // Footer Accordion
-    $(".footer-title").on("click", function () {
-        if ($(window).width() <= 767) {
-            const $this = $(this);
-            $this.toggleClass("active");
-            $this.next("ul").slideToggle(300);
-        }
-    });
-
-    $(window).on("resize", function () {
-        if ($(window).width() > 767) {
-            $(".footer-title").removeClass("active");
-            $(".footer-title").next("ul").removeAttr("style");
-        }
-    });
-
-    // User Menu Toggle for Mobile
-    $(".user-menu-toggle").on("click", function () {
-        if ($(window).width() <= 991) {
-            const $this = $(this);
-            $this.toggleClass("active");
-            $this.closest(".user-menu").find(".menu-list").slideToggle(300);
-        }
-    });
-
-    $(window).on("resize", function () {
-        if ($(window).width() > 991) {
-            $(".user-menu-toggle").removeClass("active");
-            $(".menu-list").removeAttr("style");
-        }
-    });
-
-    // OTP Modal Logic
-    const registerForm = document.querySelector('.login-main-form');
-    const otpModal = document.getElementById('otp-modal');
-
-    if (registerForm && otpModal) {
-        registerForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Stop standard form submission
-            const bsModal = new bootstrap.Modal(otpModal);
-            bsModal.show();
-        });
-    }
-
-    // OTP Input Auto-focus Logic
-    const otpInputs = document.querySelectorAll('.otp-input');
-    otpInputs.forEach((input, index) => {
-        input.addEventListener('input', function () {
-            if (this.value.length === this.maxLength && index < otpInputs.length - 1) {
-                otpInputs[index + 1].focus();
+            // Toggle icon (optional: switch between bars and times)
+            const icon = mobileMenuToggle.querySelector('i');
+            if (isActive) {
+                icon.classList.replace('fa-bars', 'fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+                document.body.style.overflow = '';
             }
         });
-
-        // Handle backspace to focus previous input
-        input.addEventListener('keydown', function (e) {
-            if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
-                otpInputs[index - 1].focus();
-            }
-        });
-    });
-
-
-});
-// wow animation
-document.addEventListener("DOMContentLoaded", function () {
-
-    const singleElements = document.querySelectorAll('section ,h1');
-    singleElements.forEach(el => {
-        el.classList.add('wow', 'fadeInUp');
-    });
-
-
-    const staggeredItems = document.querySelectorAll('.single-faq-item,.single-blog-card,.single-testimonial-card');
-
-    staggeredItems.forEach((el, index) => {
-        el.classList.add('wow', 'fadeInUp');
-
-        let delayMultiplier = index % 3;
-
-        if (delayMultiplier > 0) {
-            el.setAttribute('data-wow-delay', `${delayMultiplier * 0.2}s`);
-        }
-    });
-
-    if (typeof WOW !== 'undefined') {
-        new WOW({
-            boxClass: 'wow',
-            offset: 50,
-            mobile: true,
-            live: true
-        }).init();
-    }
-});
-
-// ==========================================
-// Open Media Modal
-// ==========================================
-function openMediaModal(type, src) {
-    const modalBody = document.getElementById('mediaModalBody');
-
-    // Detect Content Type
-    if (type === 'image') {
-        modalBody.innerHTML = `<img src="${src}" class="img-fluid rounded shadow-lg" style="max-height: 80vh; object-fit: contain;">`;
-    } else if (type === 'video') {
-        modalBody.innerHTML = `<video src="${src}" class="w-100 rounded shadow-lg" style="max-height: 80vh;" controls autoplay></video>`;
     }
 
-    const modalElement = document.getElementById('mediaModal');
-    const mediaModal = bootstrap.Modal.getOrCreateInstance(modalElement);
-    mediaModal.show();
-}
-
-// Clean the modal and stop the video when it is closed (with confirmation that it exists first)
-const mediaModalElement = document.getElementById('mediaModal');
-if (mediaModalElement) {
-    mediaModalElement.addEventListener('hidden.bs.modal', function () {
-        const modalBody = document.getElementById('mediaModalBody');
-        if (modalBody) {
-            modalBody.innerHTML = '';
-        }
-    });
-}
-
-// ==========================================
-// Play and Stop Audio (Dynamically without ID)
-// ==========================================
-function toggleAudio(btn) {
-    // Search for the audio file for this specific button
-    let audio = btn.parentElement.querySelector('audio');
-    let icon = btn.querySelector('i');
-
-    // Stop any other audio playing on the page so they don't interfere
-    document.querySelectorAll('audio').forEach(a => {
-        if (a !== audio) {
-            a.pause();
-            let otherBtn = a.parentElement.querySelector('.play-audio-btn i');
-            if (otherBtn) {
-                otherBtn.classList.remove('fa-pause');
-                otherBtn.classList.add('fa-play');
-            }
-        }
-    });
-
-    // Play or Stop Current Audio
-    if (audio.paused) {
-        audio.play();
-        icon.classList.remove('fa-play');
-        icon.classList.add('fa-pause');
-    } else {
-        audio.pause();
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
-    }
-}
-
-// Return the icon to the Play shape when the sound ends
-function resetAudio(audio) {
-    let icon = audio.parentElement.querySelector('.play-audio-btn i');
-    if (icon) {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
-    }
-}
-
-
-
-// Add to fav active classs
-const addToFavBtn = document.querySelectorAll('.add-to-fav');
-if (addToFavBtn) {
-    addToFavBtn.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
+    // Handle Mobile Dropdowns (Links and Buttons) with Slide Effect
+    const dropdownTriggers = $('.custom-dropdown > a, .custom-dropdown > button, .custom-dropdown-submenu > a');
+    dropdownTriggers.on('click', function (e) {
+        if (window.innerWidth < 992) {
             e.preventDefault();
-            btn.classList.toggle('active');
-        });
-    });
-}
+            e.stopPropagation();
 
-// Scheduling Calendar Logic
-const timeSlots = document.querySelectorAll('.time-slot');
-if (timeSlots.length > 0) {
-    timeSlots.forEach(slot => {
-        slot.addEventListener('click', function () {
-            if (!this.disabled) {
-                // Remove selected class from all
-                timeSlots.forEach(s => s.classList.remove('selected'));
-                // Add to clicked
-                this.classList.add('selected');
+            const $this = $(this);
+            const $parent = $this.parent();
+            const $submenu = $this.next('ul');
+
+            // Toggle the submenu slide
+            $submenu.slideToggle(400);
+
+            // Toggle active class for other styling (like chevron rotation)
+            const isActive = $parent.toggleClass('active').hasClass('active');
+
+            // Toggle rotation of chevrons
+            const $icon = $this.find('i');
+            if ($icon.length) {
+                $icon.css({
+                    'transition': 'transform 0.3s ease',
+                    'transform': isActive ? 'rotate(180deg)' : ''
+                });
             }
-        });
+        }
     });
-}
-// =========================================================================
-// ⚠️ تنبيه هام لفريق الباك إند (BACKEND TEAM) ⚠️
-// الكود التالي هو داتا وهمية (Mock Data) لغرض المعاينة (Demo) فقط للتستر والعميل.
-// يرجى مسح هذا الجزء واستبداله بـ API Calls الحقيقية لجلب المواعيد المتاحة
-// وتحديث الـ DOM بناءً على التواريخ الراجعة من قاعدة البيانات.
-// =========================================================================
 
-const calendarPrev = document.querySelector('.calendar-prev');
-const calendarNext = document.querySelector('.calendar-next');
-const calendarTitle = document.querySelector('.calendar-title');
-const dayDates = document.querySelectorAll('.day-date');
-const timeSlotsContainers = document.querySelectorAll('.time-slots-container');
-
-// تحديد تاريخ البداية بناءً على التصميم (9 مارس 2026)
-let currentStartDate = new Date('2026-03-09');
-
-function updateCalendarDemo(baseDate) {
-    // جلب اسم الشهر بالعربي
-    const monthName = new Intl.DateTimeFormat('ar-EG', { month: 'long' }).format(baseDate);
-    const year = baseDate.getFullYear();
-
-    // حساب تاريخ نهاية الأسبوع (بعد 6 أيام)
-    const endDate = new Date(baseDate);
-    endDate.setDate(baseDate.getDate() + 6);
-
-    // تحديث العنوان الرئيسي
-    if (calendarTitle) {
-        calendarTitle.textContent = `${baseDate.getDate()} - ${endDate.getDate()} ${monthName} _ ${year}`;
+    // Hero Section Swiper Initialization
+    if (document.querySelector('.hero-swiper')) {
+        var heroSwiper = new Swiper('.hero-swiper', {
+            rtl: isRtl,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+            allowTouchMove: false
+        });
+    }
+    // Best Selection Swiper
+    if (document.querySelector('.best-selection-swiper')) {
+        var bestSelectionSwiper = new Swiper('.best-selection-swiper', {
+            rtl: isRtl,
+            loop: true,
+            loopedSlides: 5,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            speed: 700,
+            navigation: {
+                prevEl: '.bs-nav-prev',
+                nextEl: '.bs-nav-next',
+            },
+            pagination: {
+                el: '.best-selection-progressbar',
+                type: 'progressbar',
+            },
+        });
     }
 
-    // تحديث أرقام الأيام وتغيير حالة المواعيد عشوائياً
-    dayDates.forEach((dayElement, index) => {
-        const dayDate = new Date(baseDate);
-        dayDate.setDate(baseDate.getDate() + index);
+    // Testimonials Swiper
+    if (document.querySelector('.testi-swiper')) {
+        var testiSwiper = new Swiper('.testi-swiper', {
+            rtl: isRtl,
+            loop: true,
+            speed: 700,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            navigation: {
+                prevEl: '.testi-button-prev',
+                nextEl: '.testi-button-next',
+            },
+            pagination: {
+                el: '.testi-progressbar',
+                type: 'progressbar',
+            },
+        });
+    }
+    // Counter Up Animation
+    const counters = document.querySelectorAll('.counter-up');
+    const speed = 200; // The lower the slower
 
-        // تحديث الرقم المعروض لليوم
-        dayElement.textContent = dayDate.getDate();
+    const startCounter = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                let currentCount = 0;
+                const updateCount = () => {
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    const inc = target / speed;
 
-        // تحديث الـ data-date
-        const formattedDate = dayDate.toISOString().split('T')[0];
+                    if (currentCount < target) {
+                        currentCount += inc;
 
-        if (timeSlotsContainers[index]) {
-            const buttons = timeSlotsContainers[index].querySelectorAll('.time-slot');
-            buttons.forEach(btn => {
-                // 1. تحديث التاريخ في الداتا أتريبيوت للباك إند
-                btn.setAttribute('data-date', formattedDate);
+                        // Check if currentCount exceeds target due to floating point math
+                        const displayValue = currentCount > target ? target : currentCount;
 
-                // 2. إزالة أي تحديد (Active State) من الأسابيع اللي فاتت
-                btn.classList.remove('selected');
+                        if (target % 1 !== 0) {
+                            counter.innerText = displayValue.toFixed(1);
+                        } else {
+                            counter.innerText = Math.ceil(displayValue);
+                        }
 
-                // 3. عشوائية المواعيد (تغيير المتاح والمحجوز بنسبة 40% تقريباً)
-                // ده بيدي إيحاء واقعي جداً إن المواعيد بتتغير
-                const isBookedRandomly = Math.random() < 0.4;
-                btn.disabled = isBookedRandomly;
+                        if (displayValue < target) {
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter);
+            }
+        });
+    };
+
+    const counterObserver = new IntersectionObserver(startCounter, {
+        threshold: 1.0
+    });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+
+
+    // About Hero Video Modal - Stop video when modal closes
+    $('#aboutVideoModal').on('hidden.bs.modal', function () {
+        var $iframe = $(this).find('iframe');
+        var tempSrc = $iframe.attr('src');
+        $iframe.attr('src', '');
+        $iframe.attr('src', tempSrc);
+    });
+
+    // Listing View Toggle (Reusable)
+    const listViewBtn = document.getElementById('listViewBtn');
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const propertiesList = document.getElementById('propertiesList');
+
+    if (listViewBtn && gridViewBtn && propertiesList) {
+        listViewBtn.addEventListener('click', function () {
+            this.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            propertiesList.classList.remove('grid-view');
+            propertiesList.classList.add('list-view');
+            propertiesList.classList.remove('flex-row', 'flex-wrap');
+            propertiesList.classList.add('flex-column');
+        });
+
+        gridViewBtn.addEventListener('click', function () {
+            this.classList.add('active');
+            listViewBtn.classList.remove('active');
+            propertiesList.classList.remove('list-view');
+            propertiesList.classList.add('grid-view');
+            propertiesList.classList.remove('flex-column');
+        });
+    }
+
+    // Favourites Heart Toggle (Reusable)
+    $(document).on('click', '.property-list-fav-btn, .property-action-icon', function () {
+        $(this).toggleClass('active-accent');
+        const heart = this.querySelector('i');
+        if (heart) {
+            if ($(this).hasClass('active-accent') || $(this).hasClass('active')) {
+                heart.classList.remove('fal');
+                heart.classList.add('fas');
+            } else {
+                heart.classList.remove('fas');
+                heart.classList.add('fal');
+            }
+        }
+    });
+
+    // Price Range Sliders Initialization (Generic)
+    if (typeof noUiSlider !== 'undefined') {
+        const formatPrice = (val) => {
+            if (val >= 1000000) return '$' + (val / 1000000).toFixed(1).replace('.0', '') + 'M';
+            if (val >= 1000) return '$' + (val / 1000).toFixed(0) + 'k';
+            return '$' + val;
+        };
+
+        function initSlider(id, minId, maxId, rangeMin, rangeMax, startMin, startMax) {
+            const slider = document.getElementById(id);
+            if (!slider) return;
+
+            const minInput = document.getElementById(minId);
+            const maxInput = document.getElementById(maxId);
+            if (!minInput || !maxInput) return;
+
+            noUiSlider.create(slider, {
+                start: [startMin, startMax],
+                connect: true,
+                direction: isRtl ? 'rtl' : 'ltr',
+                range: { 'min': rangeMin, 'max': rangeMax },
+                format: {
+                    to: value => Math.round(value),
+                    from: value => Number(value)
+                }
+            });
+
+            slider.noUiSlider.on('update', function (values, handle) {
+                if (handle == 1) maxInput.value = values[handle];
+                else minInput.value = values[handle];
+            });
+
+            minInput.addEventListener('change', function () { slider.noUiSlider.set([this.value, null]); });
+            maxInput.addEventListener('change', function () { slider.noUiSlider.set([null, this.value]); });
+        }
+
+        // Initialize Global Sliders
+        initSlider('price-range-slider', 'price-min', 'price-max', 0, 100000000, 1000000, 10000000);
+        initSlider('ppf-range-slider', 'ppf-min', 'ppf-max', 0, 50000, 500, 5000);
+
+        // Initialize Index Search Sliders
+        document.querySelectorAll('.js-price-range-slider').forEach(slider => {
+            const rangeMin = parseFloat(slider.dataset.min || 0);
+            const rangeMax = parseFloat(slider.dataset.max || 1000000);
+            const startMin = parseFloat(slider.dataset.startMin || rangeMin);
+            const startMax = parseFloat(slider.dataset.startMax || rangeMax);
+
+            noUiSlider.create(slider, {
+                start: [startMin, startMax],
+                connect: true,
+                direction: isRtl ? 'rtl' : 'ltr',
+                range: { 'min': rangeMin, 'max': rangeMax },
+                format: {
+                    to: value => Math.round(value),
+                    from: value => Number(value)
+                }
+            });
+
+            const parent = slider.closest('.price-range-wrapper');
+            const minInput = parent.querySelector('.js-price-range-min-input');
+            const maxInput = parent.querySelector('.js-price-range-max-input');
+
+            slider.noUiSlider.on('update', function (values, handle) {
+                if (handle === 0) {
+                    if (minInput) minInput.value = values[0];
+                } else {
+                    if (maxInput) maxInput.value = values[1];
+                }
+
+                // Update Display Text
+                const display = parent.closest('.custom-search-dropdown').querySelector('.js-current-price-display');
+                if (display) {
+                    display.innerText = `${formatPrice(values[0])} - ${formatPrice(values[1])}`;
+                }
+            });
+
+            if (minInput) {
+                minInput.addEventListener('change', function () {
+                    slider.noUiSlider.set([this.value, null]);
+                });
+            }
+
+            if (maxInput) {
+                maxInput.addEventListener('change', function () {
+                    slider.noUiSlider.set([null, this.value]);
+                });
+            }
+        });
+    }
+
+    // Custom Search Dropdown Logic (Price)
+    const priceDropdownTriggers = document.querySelectorAll('.search-dropdown-trigger');
+    priceDropdownTriggers.forEach(trigger => {
+        const wrapper = trigger.closest('.custom-search-dropdown');
+        const menu = wrapper.querySelector('.search-dropdown-menu');
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close other open search dropdowns first
+            $('.search-dropdown-menu').not(menu).addClass('d-none');
+            $('.live-search-results').addClass('d-none');
+            
+            menu.classList.toggle('d-none');
+        });
+
+        // Close when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.custom-search-dropdown').is(wrapper)) {
+                menu.classList.add('d-none');
+            }
+        });
+
+        // Prevent menu close when clicking inside
+        menu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
+    // Custom Live Search Logic
+    const liveSearchInputs = document.querySelectorAll('.live-search-input');
+    liveSearchInputs.forEach(input => {
+        const wrapper = input.closest('.custom-live-search');
+        const results = wrapper.querySelector('.live-search-results');
+        const hiddenInput = wrapper.querySelector('.live-search-hidden');
+        const items = results.querySelectorAll('li');
+
+        input.addEventListener('focus', () => {
+            results.classList.remove('d-none');
+            // Show all initially or based on current value
+            filterItems(input.value);
+        });
+
+        input.addEventListener('input', () => {
+            filterItems(input.value);
+        });
+
+        // Hide results when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
+                results.classList.add('d-none');
+            }
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                input.value = item.innerText;
+                hiddenInput.value = item.dataset.value;
+                results.classList.add('d-none');
+            });
+        });
+
+        function filterItems(val) {
+            const filter = val.toLowerCase();
+            let hasVisible = false;
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.style.display = 'block';
+                    hasVisible = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            if (hasVisible) results.classList.remove('d-none');
+            else results.classList.add('d-none');
+        }
+    });
+
+    // Star Rating Input Functionality
+    const starRatingInput = $('#starRatingInput');
+    if (starRatingInput.length) {
+        const stars = starRatingInput.find('i');
+        const ratingHiddenInput = $('#ratingValue');
+
+        stars.on('mouseover', function () {
+            const rating = $(this).data('rating');
+            updateStarsDisplay(rating, true);
+        });
+
+        stars.on('mouseout', function () {
+            const currentRating = ratingHiddenInput.val() || 0;
+            updateStarsDisplay(currentRating, false);
+        });
+
+        stars.on('click', function () {
+            const rating = $(this).data('rating');
+            ratingHiddenInput.val(rating);
+            updateStarsDisplay(rating, false);
+        });
+
+        function updateStarsDisplay(rating, isHover) {
+            stars.each(function () {
+                const starRating = $(this).data('rating');
+                if (starRating <= rating) {
+                    $(this).removeClass('far').addClass('fas active');
+                    if (isHover) $(this).addClass('hover');
+                    else $(this).removeClass('hover');
+                } else {
+                    $(this).removeClass('fas active hover').addClass('far');
+                }
             });
         }
-    });
-}
+    }
+    // Property Gallery Swiper
+    if (document.querySelector(".property-gallery-swiper")) {
+        const propertyGallerySwiper = new Swiper(".property-gallery-swiper", {
+            loop: true,
+            centeredSlides: true,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 30,
+                }
+            }
+        });
+    }
 
-if (calendarPrev) {
-    calendarPrev.addEventListener('click', function () {
-        currentStartDate.setDate(currentStartDate.getDate() - 7);
-        updateCalendarDemo(currentStartDate);
-    });
-}
+    // Video Carousel Swiper
+    if (document.querySelector('.video-carousel-swiper')) {
+        const videoCarouselSwiper = new Swiper('.video-carousel-swiper', {
+            rtl: isRtl,
+            loop: true,
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                576: { slidesPerView: 1.8, spaceBetween: 20 },
+                992: { slidesPerView: 2.5, spaceBetween: 30 },
+                1200: { slidesPerView: 3.5, spaceBetween: 30 }
+            }
+        });
+    }
 
-if (calendarNext) {
-    calendarNext.addEventListener('click', function () {
-        currentStartDate.setDate(currentStartDate.getDate() + 7);
-        updateCalendarDemo(currentStartDate);
-    });
-}
-// ======================= نهاية كود المعاينة الوهمي =======================
+    // Top Properties Swiper (Best Property Value)
+    if (document.querySelector('.bpv-swiper')) {
+        const bpvSwiper = new Swiper('.bpv-swiper', {
+            rtl: isRtl,
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                prevEl: '.bpv-button-prev',
+                nextEl: '.bpv-button-next',
+            },
+            pagination: {
+                el: '.bpv-pagination-fraction',
+                type: 'fraction',
+                formatFractionCurrent: function (number) {
+                    return number < 10 ? '0' + number : number;
+                },
+                formatFractionTotal: function (number) {
+                    return number < 10 ? '0' + number : number;
+                }
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1200: { slidesPerView: 3, spaceBetween: 30 }
+            },
+            on: {
+                slideChange: function () {
+                    const progressBar = document.querySelector('.bpv-progressbar-fill');
+                    if (progressBar) {
+                        const realSlides = this.el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+                        const percentage = realSlides > 0 ? ((this.realIndex + 1) / realSlides) * 100 : 0;
+                        progressBar.style.width = percentage + '%';
+                    }
+                },
+                init: function () {
+                    const progressBar = document.querySelector('.bpv-progressbar-fill');
+                    if (progressBar) {
+                        const realSlides = this.el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+                        const percentage = realSlides > 0 ? ((this.realIndex + 1) / realSlides) * 100 : 0;
+                        progressBar.style.width = percentage + '%';
+                    }
+                }
+            }
+        });
+    }
+});

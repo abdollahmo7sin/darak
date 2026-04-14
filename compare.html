@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Compare Darak properties to find your perfect match.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Compare Properties — Darak</title>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR (Custom primary) ===== -->
+    <nav class="custom-navbar custom-primary w-100 py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/header-logo-blue.png" class="img-fluid" alt="">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="d-lg-none border-0 bg-transparent text-white px-0" id="mobileMenuToggle">
+                <i class="fal fa-bars fs-3"></i>
+            </button>
+
+            <!-- Dynamic Menu Container -->
+            <div class="custom-navbar-collapse d-none d-lg-flex align-items-center justify-content-between flex-grow-1 ms-lg-4"
+                id="navbarMenu">
+                <!-- Navigation Links -->
+                <ul
+                    class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
+                    <li><a class="custom-nav-link" href="index.html">Home</a></li>
+                    <li><a class="custom-nav-link" href="#">About us</a></li>
+                    <li><a class="custom-nav-link active" href="properties.html">Properties</a></li>
+                    <li class="custom-dropdown position-relative">
+                        <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
+                            id="servicesDropdown">
+                            Service <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </a>
+                        <ul
+                            class="custom-dropdown-menu bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class="text-black px-3 py-2 rounded" href="#">Consulting</a></li>
+                            <li class="custom-dropdown-submenu position-relative">
+                                <a class="text-black d-flex justify-content-between align-items-center px-3 py-2 rounded w-100"
+                                    href="javascript:void(0)">
+                                    Real Estate <i class="fal fa-chevron-right ms-2 fz11"></i>
+                                </a>
+                                <ul
+                                    class="custom-submenu-menu bg-white list-unstyled position-absolute rounded shadow p-2 m-0 z-3">
+                                    <li><a class="text-black px-3 py-2 rounded" href="#">Commercial</a></li>
+                                    <li><a class="text-black px-3 py-2 rounded" href="#">Residential</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="custom-nav-link" href="#">Insights</a></li>
+                    <li><a class="custom-nav-link" href="#">Contact us</a></li>
+                </ul>
+
+                <!-- Right Actions -->
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-2 gap-xl-3">
+                    <div
+                        class="bg-white bg-opacity-25 rounded-pill p-1 pe-2 d-flex align-items-center w-100 w-lg-auto justify-content-center">
+                        <a href="#"
+                            class="btn btn-sm rounded-pill px-2 px-xl-3 border-0 text-white text-nowrap">Evaluate
+                            Property</a>
+                        <a href="#" class="btn btn-sm btn-accent rounded-pill px-3 px-xl-4 border-0 text-nowrap">Add
+                            Property</a>
+                    </div>
+                    <div class="custom-dropdown position-relative d-inline-block">
+                        <button
+                            class="btn btn-link text-white text-decoration-none p-0 d-flex align-items-center gap-1">
+                            <i class="fal fa-globe "></i> EN <i class="fal fa-chevron-down ms-1 fz11"></i>
+                        </button>
+                        <ul
+                            class="custom-dropdown-menu end-0 bg-white list-unstyled position-absolute rounded shadow p-2 mt-2 m-0 z-3">
+                            <li><a class="text-black d-block px-3 py-2 rounded" href="index.html">English (EN)</a></li>
+                            <li><a class="text-black d-block px-3 py-2 rounded" href="ar/index.html">العربية (AR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== COMPARE PAGE CONTENT ===== -->
+    <main class="compare-page-content py-5">
+        <div class="container py-lg-4">
+
+            <!-- Top Header Section -->
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-4">
+                <div>
+                    <h2 class="fw-bold text-primary mb-1">Compare Properties</h2>
+                    <p class="text-muted fz14 mb-0">2 properties selected</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+                    <button class="btn btn-white-pill border rounded-pill px-4 py-2 fz14 fw-bold">Print
+                        Comparison</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-2 fz14 fw-bold">Share Comparison</button>
+                    <!-- Grid/List Toggles reused from properties page -->
+                    <div class="listings-view-toggle d-flex ms-md-2" role="group" aria-label="View toggle">
+                        <button class="listings-view-btn active" id="gridViewBtn" aria-label="Grid view">
+                            <i class="fal fa-th-large"></i>
+                        </button>
+                        <button class="listings-view-btn " id="listViewBtn" aria-label="List view">
+                            <i class="fal fa-th-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Cards Grid (Top Row) -->
+            <div id="propertiesList" class="row g-4 mb-5 properties-container grid-view">
+                <!-- Column 1: Property Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card h-100">
+                        <div class="property-card-img-wrapper">
+                            <div class="property-badge-top"><i class="fal fa-bolt"></i> LUXURY</div>
+                            <div class="property-badge-bottom">$1,200,000</div>
+                            <img src="images/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg" alt="Property"
+                                class="property-card-img">
+                        </div>
+                        <div class="property-card-body">
+                            <h4 class="property-title">Penthouse in the City</h4>
+                            <p class="property-address">101 Skyline Blvd</p>
+                            <div class="property-stats">
+                                <div class="property-stat-item"><i class="fal fa-bed"></i> 4 Beds</div>
+                                <div class="property-stat-item"><i class="fal fa-bath"></i> 3 Baths</div>
+                                <div class="property-stat-item"><i class="fal fa-vector-square"></i> 3,200 sqft</div>
+                            </div>
+                        </div>
+                        <div class="property-card-divider"></div>
+                        <div class="property-card-footer">
+                            <span class="property-status">For Sale</span>
+                            <div class="property-actions">
+                                <a href="#" class="property-btn-details"><i class="fal fa-external-link-alt fz12"></i>
+                                    Details</a>
+                                <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Property Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card h-100">
+                        <div class="property-card-img-wrapper">
+                            <div class="property-badge-top"><i class="fal fa-bolt"></i> NEW LISTING</div>
+                            <div class="property-badge-bottom">$3,200</div>
+                            <img src="images/albert-hyseni-Pe33QUcC__I-unsplash.jpg" alt="Property"
+                                class="property-card-img">
+                        </div>
+                        <div class="property-card-body">
+                            <h4 class="property-title">Modern Loft in Downtown</h4>
+                            <p class="property-address">178 Main St</p>
+                            <div class="property-stats">
+                                <div class="property-stat-item"><i class="fal fa-bed"></i> 2 Beds</div>
+                                <div class="property-stat-item"><i class="fal fa-bath"></i> 1 Bath</div>
+                                <div class="property-stat-item"><i class="fal fa-vector-square"></i> 1,200 sqft</div>
+                            </div>
+                        </div>
+                        <div class="property-card-divider"></div>
+                        <div class="property-card-footer">
+                            <span class="property-status">For Sale</span>
+                            <div class="property-actions">
+                                <a href="#" class="property-btn-details"><i class="fal fa-external-link-alt fz12"></i>
+                                    Details</a>
+                                <button class="property-action-icon"><i class="fal fa-heart"></i></button>
+                                <button class="property-action-icon"><i class="fal fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Add Property Placeholder -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="add-property-card">
+                        <div class="add-property-icon-btn">
+                            <i class="fal fa-plus"></i>
+                        </div>
+                        <h5 class="fz18">Add Property</h5>
+                        <p class="mb-0">Compare up to 4 properties</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Information Table -->
+            <div class="compare-table-wrapper mb-5 overflow-auto">
+                <div class="compare-table border rounded-4 overflow-hidden" style="min-width: 900px;">
+                    <!-- Table Header -->
+                    <div class="compare-row compare-header bg-primary text-white text-center fw-bold">
+                        <div class="compare-col compare-label text-start fz16"><i
+                                class="fal fa-home-alt me-2 text-white"></i> Basic Information</div>
+                        <div class="compare-col fz15">Penthouse in the City</div>
+                        <div class="compare-col fz15">Modern Loft in Downtown</div>
+                    </div>
+                    <!-- Rows -->
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-home text-primary me-2 fz16"></i> Property Type</div>
+                        <div class="compare-col fz14 text-muted">Commercial</div>
+                        <div class="compare-col fz14 text-muted">Villa</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-map-marker-alt text-primary me-2 fz16"></i> Address</div>
+                        <div class="compare-col fz14 text-muted">4242 Al Nasr St.</div>
+                        <div class="compare-col fz14 text-muted">7901 West St.</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-dollar-sign text-primary me-2 fz16"></i> Price / Rent</div>
+                        <div class="compare-col fz14 text-muted"><span class="compare-better-arrow"><i
+                                    class="fas fa-arrow-up"></i></span> QAR 4,900</div>
+                        <div class="compare-col fz14 text-muted">QAR 4,210</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-cube text-primary me-2 fz16"></i> Build-up Area</div>
+                        <div class="compare-col fz14 text-muted">Qatar</div>
+                        <div class="compare-col fz14 text-muted">Doha</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-expand-arrows text-primary me-2 fz16"></i> Plot / Land Area</div>
+                        <div class="compare-col fz14 text-muted">Qatar</div>
+                        <div class="compare-col fz14 text-muted">Doha</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-bed text-primary me-2 fz16"></i> Bedrooms</div>
+                        <div class="compare-col fz14 text-muted">3</div>
+                        <div class="compare-col fz14 text-muted"><span class="compare-better-arrow"><i
+                                    class="fas fa-arrow-up"></i></span> 4</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-bath text-primary me-2 fz16"></i> Bathrooms</div>
+                        <div class="compare-col fz14 text-muted"><span class="compare-better-arrow"><i
+                                    class="fas fa-arrow-up"></i></span> 3</div>
+                        <div class="compare-col fz14 text-muted">2</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-car text-primary me-2 fz16"></i> Garages</div>
+                        <div class="compare-col fz14 text-muted">1</div>
+                        <div class="compare-col fz14 text-muted"><span class="compare-better-arrow"><i
+                                    class="fas fa-arrow-up"></i></span> 2</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-hashtag text-primary me-2 fz16"></i> Zip/Postal Code</div>
+                        <div class="compare-col fz14 text-muted">12345</div>
+                        <div class="compare-col fz14 text-muted">67890</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-hashtag text-primary me-2 fz16"></i> Property ID</div>
+                        <div class="compare-col fz14 text-muted">QMAP-R48562</div>
+                        <div class="compare-col fz14 text-muted">QMAP-R86214</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-user-tie text-primary me-2 fz16"></i> Ownership</div>
+                        <div class="compare-col fz14 text-muted">Leased Holder</div>
+                        <div class="compare-col fz14 text-muted">Free Hold</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-calendar-alt text-primary me-2 fz16"></i> Property Age</div>
+                        <div class="compare-col fz14 text-muted">44</div>
+                        <div class="compare-col fz14 text-muted">39</div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-chart-line text-primary me-2 fz16"></i> ROI</div>
+                        <div class="compare-col fz14 text-muted"><span class="compare-better-arrow"><i
+                                    class="fas fa-arrow-up"></i></span> 22%</div>
+                        <div class="compare-col fz14 text-muted">18%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Amenities Table -->
+            <div class="compare-table-wrapper mb-5 overflow-auto">
+                <div class="compare-table border rounded-4 overflow-hidden" style="min-width: 900px;">
+                    <!-- Table Header -->
+                    <div class="compare-row compare-header bg-primary text-white text-center fw-bold">
+                        <div class="compare-col compare-label text-start fz16">Features & Amenities</div>
+                        <div class="compare-col fz15">Penthouse in the City</div>
+                        <div class="compare-col fz15">Modern Loft in Downtown</div>
+                    </div>
+                    <!-- Rows -->
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-ruler-combined text-primary me-2 fz16"></i> Finishing</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-couch text-primary me-2 fz16"></i> Furnishing</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-fan text-primary me-2 fz16"></i> Central A/C & Heating</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-loveseat text-primary me-2 fz16"></i> Balcony</div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-dumbbell text-primary me-2 fz16"></i> Gym</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-tree text-primary me-2 fz16"></i> Garden</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-shield-check text-primary me-2 fz16"></i> Security</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-elevator text-primary me-2 fz16"></i> Elevator</div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-swimming-pool text-primary me-2 fz16"></i> Swimming Pool</div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                        <div class="compare-col"><span class="compare-check"><i class="fas fa-check"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-tv text-primary me-2 fz16"></i> TV Cable</div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                        <div class="compare-col"><span class="compare-dash"><i class="fas fa-minus"></i></span></div>
+                    </div>
+                    <div class="compare-row text-center">
+                        <div class="compare-col compare-label fw-bold fz14"><i
+                                class="fal fa-eye text-primary me-2 fz16"></i> View</div>
+                        <div class="compare-col fz14 text-muted">City View</div>
+                        <div class="compare-col fz14 text-muted">Sea View</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendation Text -->
+            <div class="compare-recommendation d-flex align-items-center mb-4 mt-2">
+                <i class="fal fa-stars text-accent fz24 me-3"></i>
+                <h3 class="mb-0 fw-bold fz24 text-black">RECOMMENDATION: Penthouse in the City is best for you</h3>
+            </div>
+
+        </div>
+
+
+        <!-- CTA Connect Section -->
+        <section class="cta-connect-section py-100">
+            <div class="container text-center">
+                <h2 class="cta-connect-title text-primary-dark fz60 mb-5 wow fadeInUp">
+                    READY TO CONNECT? REACH OUT TO <br class="d-none d-lg-block"> DARAK REAL ESTATE TODAY!
+                </h2>
+                <div class="cta-connect-wrapper mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="contact-us.html" class="cta-connect-link">
+                        <div class="cta-image-container">
+                            <img src="images/contact-bg.png" alt="Connect with Darak" class="img-fluid">
+                            <div class="cta-gradient-overlay"></div>
+                            <div class="cta-chat-btn">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+
+        <!-- Popular Search Panel -->
+        <div class="footer-popular-search">
+            <div class="container">
+                <h3 class="popular-search-title">
+                    <span class="text-accent">✦</span> Popular Search <span class="text-accent">✦</span>
+                </h3>
+                <div class="row g-4 mt-3">
+                    <!-- Top Areas -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Top Areas</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Most In-Demand Areas</a></li>
+                            <li><a href="#">Northern Areas</a></li>
+                            <li><a href="#">Southern Areas</a></li>
+                            <li><a href="#">Al Duhail</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Sale -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Sale</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Villas for Sale</a></li>
+                            <li><a href="#">Land for Sale</a></li>
+                            <li><a href="#">Recent price reductions on properties.</a></li>
+                            <li><a href="#">Residency Ownership</a></li>
+                        </ul>
+                    </div>
+                    <!-- For Rent -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">For Rent</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Apartments for Rent</a></li>
+                            <li><a href="#">Villas for Rent</a></li>
+                            <li><a href="#">Office Spaces</a></li>
+                            <li><a href="#">Commercial</a></li>
+                        </ul>
+                    </div>
+                    <!-- Investments -->
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-link-heading">Investments</h5>
+                        <ul class="footer-link-list">
+                            <li><a href="#">Investment Properties with 9% Return</a></li>
+                            <li><a href="#">New Investment Properties with 5% to 6.9% Returns</a></li>
+                            <li><a href="#">Installment Projects</a></li>
+                            <li><a href="#">High ROI Properties</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="footer-tags mt-5">
+                    <a href="#" class="footer-tag">1 Bedroom</a>
+                    <a href="#" class="footer-tag">2 Bedroom</a>
+                    <a href="#" class="footer-tag">3 Bedroom Villas</a>
+                    <a href="#" class="footer-tag">Luxury Properties</a>
+                    <a href="#" class="footer-tag">Beachfront</a>
+                    <a href="#" class="footer-tag">Golf Course</a>
+                    <a href="#" class="footer-tag">Smart Homes</a>
+                    <a href="#" class="footer-tag">Pet-Friendly</a>
+                    <a href="#" class="footer-tag">Short-Term Rentals</a>
+                    <a href="#" class="footer-tag">Furnished</a>
+                    <a href="#" class="footer-tag">villa</a>
+                    <a href="#" class="footer-tag">office</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-md-5">
+
+                    <!-- Col 1: Logo + Info -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-logo mb-4">
+                            <img src="images/logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-info-label"><strong>Our Address:</strong></p>
+                        <p class="footer-info-text">
+                            Bin Mahmoud,<br>
+                            Al Jazeera Al Arabiya Street,<br>
+                            Building 57, 6th Floor, Office 601,<br>
+                            Doha.
+                        </p>
+                        <p class="footer-info-text mt-3"><strong>Support 24/7:</strong> 1-555-678-8888</p>
+                        <p class="footer-info-text"><strong>Email Address:</strong> hi.avitex@gmail.com</p>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Quick Links</h5>
+                        <ul class="footer-link-list footer-link-list--main">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">insights</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-col-heading">Join Our Newsletter</h5>
+                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
+                            <button class="footer-newsletter-btn" aria-label="Subscribe">
+                                <i class="fal fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <p class="footer-newsletter-note mt-3">
+                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer-bar">
+            <div
+                class="container d-flex align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
+                <p class="footer-copyright">© 2026 Darak Real Estate. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Snapchat"><i
+                            class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
