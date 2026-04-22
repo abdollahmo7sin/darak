@@ -325,48 +325,130 @@ jQuery(document).ready(function () {
     liveSearchInputs.forEach(input => {
         const wrapper = input.closest('.custom-live-search');
         const results = wrapper.querySelector('.live-search-results');
-        const hiddenInput = wrapper.querySelector('.live-search-hidden');
         const items = results.querySelectorAll('li');
+        const isMulti = wrapper.classList.contains('custom-live-search-multi');
 
-        input.addEventListener('focus', () => {
-            results.classList.remove('d-none');
-            // Show all initially or based on current value
-            filterItems(input.value);
-        });
+        if (isMulti) {
+            // Multi-select mode
+            const tagsContainer = wrapper.querySelector('.live-search-tags');
 
-        input.addEventListener('input', () => {
-            filterItems(input.value);
-        });
-
-        // Hide results when clicking outside
-        $(document).on('click', function (e) {
-            if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
-                results.classList.add('d-none');
-            }
-        });
-
-        items.forEach(item => {
-            item.addEventListener('click', () => {
-                input.value = item.innerText;
-                hiddenInput.value = item.dataset.value;
-                results.classList.add('d-none');
+            input.addEventListener('focus', () => {
+                results.classList.remove('d-none');
+                filterItems(input.value);
             });
-        });
 
-        function filterItems(val) {
-            const filter = val.toLowerCase();
-            let hasVisible = false;
-            items.forEach(item => {
-                const text = item.innerText.toLowerCase();
-                if (text.includes(filter)) {
-                    item.style.display = 'block';
-                    hasVisible = true;
-                } else {
-                    item.style.display = 'none';
+            input.addEventListener('input', () => {
+                filterItems(input.value);
+            });
+
+            // Close when clicking outside
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
+                    results.classList.add('d-none');
                 }
             });
-            if (hasVisible) results.classList.remove('d-none');
-            else results.classList.add('d-none');
+
+            items.forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Always toggle via JS to avoid double-toggle from label
+                    checkbox.checked = !checkbox.checked;
+                    item.classList.toggle('checked', checkbox.checked);
+                    renderTags();
+                    input.value = '';
+                    filterItems('');
+                });
+            });
+
+            function renderTags() {
+                tagsContainer.innerHTML = '';
+                const checkedItems = results.querySelectorAll('li input[type="checkbox"]:checked');
+                checkedItems.forEach(cb => {
+                    const li = cb.closest('li');
+                    const text = li.textContent.trim();
+                    const value = li.dataset.value;
+
+                    const tag = document.createElement('span');
+                    tag.className = 'live-search-tag';
+                    tag.dataset.value = value;
+                    tag.innerHTML = `${text}<button type="button" class="live-search-tag-remove"><i class="fal fa-times"></i></button>`;
+
+                    tag.querySelector('.live-search-tag-remove').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        cb.checked = false;
+                        li.classList.remove('checked');
+                        renderTags();
+                    });
+
+                    tagsContainer.appendChild(tag);
+                });
+
+                // Update placeholder visibility
+                if (checkedItems.length > 0) {
+                    input.placeholder = '';
+                } else {
+                    input.placeholder = 'Select Your City';
+                }
+            }
+
+            function filterItems(val) {
+                const filter = val.toLowerCase();
+                let hasVisible = false;
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        item.style.display = 'block';
+                        hasVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                if (hasVisible) results.classList.remove('d-none');
+                else results.classList.add('d-none');
+            }
+        } else {
+            // Single-select mode (original behavior)
+            const hiddenInput = wrapper.querySelector('.live-search-hidden');
+
+            input.addEventListener('focus', () => {
+                results.classList.remove('d-none');
+                filterItems(input.value);
+            });
+
+            input.addEventListener('input', () => {
+                filterItems(input.value);
+            });
+
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
+                    results.classList.add('d-none');
+                }
+            });
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    input.value = item.innerText;
+                    hiddenInput.value = item.dataset.value;
+                    results.classList.add('d-none');
+                });
+            });
+
+            function filterItems(val) {
+                const filter = val.toLowerCase();
+                let hasVisible = false;
+                items.forEach(item => {
+                    const text = item.innerText.toLowerCase();
+                    if (text.includes(filter)) {
+                        item.style.display = 'block';
+                        hasVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                if (hasVisible) results.classList.remove('d-none');
+                else results.classList.add('d-none');
+            }
         }
     });
 
