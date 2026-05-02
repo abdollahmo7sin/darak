@@ -97,16 +97,209 @@ jQuery(document).ready(function () {
             speed: 700,
             effect: 'fade',
             fadeEffect: { crossFade: true },
-            navigation: {
-                prevEl: '.testi-button-prev',
-                nextEl: '.testi-button-next',
-            },
-            pagination: {
-                el: '.testi-progressbar',
-                type: 'progressbar',
-            },
+            on: {
+                init: function () {
+                    const swiper = this;
+                    // Bind custom click events for multiple prev/next buttons
+                    document.querySelectorAll('.testi-button-prev').forEach(btn => {
+                        btn.addEventListener('click', () => swiper.slidePrev());
+                    });
+                    document.querySelectorAll('.testi-button-next').forEach(btn => {
+                        btn.addEventListener('click', () => swiper.slideNext());
+                    });
+                    
+                    // Manually init progress bars
+                    document.querySelectorAll('.testi-progressbar').forEach(pb => {
+                        pb.innerHTML = '<div class="swiper-pagination-progressbar-fill" style="transform: scaleX(0); transform-origin: left center; transition: transform 300ms;"></div>';
+                    });
+                    updateTestiProgress(swiper);
+                },
+                slideChange: function () {
+                    updateTestiProgress(this);
+                }
+            }
+        });
+
+        function updateTestiProgress(swiper) {
+            const realSlides = swiper.el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+            const percentage = realSlides > 0 ? ((swiper.realIndex + 1) / realSlides) : 0;
+            document.querySelectorAll('.testi-progressbar .swiper-pagination-progressbar-fill').forEach(fill => {
+                // Adjust transform-origin for RTL support
+                fill.style.transformOrigin = isRtl ? 'right center' : 'left center';
+                fill.style.transform = `scaleX(${percentage})`;
+            });
+        }
+    }
+
+    // ─── Cities Section: Responsive Swiper (mobile only) ───────────────────────
+    const CITIES_BREAKPOINT = 768; // Bootstrap md
+    const citySwipersMap = new Map(); // key: row element, value: Swiper instance
+
+    function initCitySwipers() {
+        const rows = document.querySelectorAll('#cities-tabContent .tab-pane .row');
+        rows.forEach(function (row) {
+            if (citySwipersMap.has(row)) return; // already initialised
+
+            // Add required Swiper classes
+            row.classList.add('swiper-wrapper', 'cities-swiper-wrapper', 'flex-nowrap');
+            row.querySelectorAll(':scope > [class*="col-"]').forEach(function (col) {
+                col.classList.add('swiper-slide');
+            });
+
+            // Create a container div wrapping the row (Swiper needs it)
+            const container = document.createElement('div');
+            container.className = 'swiper cities-mobile-swiper';
+
+            // Pagination element
+            const pagination = document.createElement('div');
+            pagination.className = 'swiper-pagination cities-swiper-pagination';
+
+            row.parentNode.insertBefore(container, row);
+            container.appendChild(row);
+            container.appendChild(pagination);
+
+            const swiper = new Swiper(container, {
+                rtl: isRtl,
+                slidesPerView: 1,
+                spaceBetween: 16,
+                centeredSlides: false,
+                loop: false,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+            });
+
+            citySwipersMap.set(row, { swiper, container, pagination });
         });
     }
+
+    function destroyCitySwipers() {
+        citySwipersMap.forEach(function ({ swiper, container, pagination }, row) {
+            swiper.destroy(true, true);
+
+            // Remove swiper wrapper classes from row
+            row.classList.remove('swiper-wrapper', 'cities-swiper-wrapper', 'flex-nowrap');
+            row.querySelectorAll(':scope > [class*="col-"]').forEach(function (col) {
+                col.classList.remove('swiper-slide');
+            });
+
+            // Unwrap: move row back before container, remove container
+            container.parentNode.insertBefore(row, container);
+            if (pagination.parentNode) pagination.parentNode.removeChild(pagination);
+            container.parentNode.removeChild(container);
+        });
+        citySwipersMap.clear();
+    }
+
+    function handleCitiesResize() {
+        if (window.innerWidth < CITIES_BREAKPOINT) {
+            if (citySwipersMap.size === 0) initCitySwipers();
+        } else {
+            if (citySwipersMap.size > 0) destroyCitySwipers();
+        }
+    }
+
+    // ─── Blogs Section: Responsive Swiper (mobile only) ───────────────────────
+    const blogSwipersMap = new Map(); // key: row element, value: Swiper instance
+
+    function initBlogSwipers() {
+        const rows = document.querySelectorAll('.blog-section .row');
+        rows.forEach(function (row) {
+            if (blogSwipersMap.has(row)) return; // already initialised
+
+            // Add required Swiper classes
+            row.classList.add('swiper-wrapper', 'blog-swiper-wrapper', 'flex-nowrap');
+            row.querySelectorAll(':scope > [class*="col-"]').forEach(function (col) {
+                col.classList.add('swiper-slide');
+            });
+
+            // Create a container div wrapping the row (Swiper needs it)
+            const container = document.createElement('div');
+            container.className = 'swiper blog-mobile-swiper';
+
+            // Pagination element
+            const pagination = document.createElement('div');
+            pagination.className = 'swiper-pagination blog-swiper-pagination';
+
+            row.parentNode.insertBefore(container, row);
+            container.appendChild(row);
+            container.appendChild(pagination);
+
+            const swiper = new Swiper(container, {
+                rtl: isRtl,
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                centeredSlides: false,
+                loop: false,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20
+                    }
+                }
+            });
+
+            blogSwipersMap.set(row, { swiper, container, pagination });
+        });
+    }
+
+    function destroyBlogSwipers() {
+        blogSwipersMap.forEach(function ({ swiper, container, pagination }, row) {
+            swiper.destroy(true, true);
+
+            // Remove swiper wrapper classes from row
+            row.classList.remove('swiper-wrapper', 'blog-swiper-wrapper', 'flex-nowrap');
+            row.querySelectorAll(':scope > [class*="col-"]').forEach(function (col) {
+                col.classList.remove('swiper-slide');
+            });
+
+            // Unwrap: move row back before container, remove container
+            container.parentNode.insertBefore(row, container);
+            if (pagination.parentNode) pagination.parentNode.removeChild(pagination);
+            container.parentNode.removeChild(container);
+        });
+        blogSwipersMap.clear();
+    }
+
+    function handleBlogResize() {
+        if (window.innerWidth < CITIES_BREAKPOINT) {
+            if (blogSwipersMap.size === 0) initBlogSwipers();
+        } else {
+            if (blogSwipersMap.size > 0) destroyBlogSwipers();
+        }
+    }
+
+    // Initial call
+    handleCitiesResize();
+    handleBlogResize();
+
+    // Re-check on resize (debounced)
+    let responsiveSwipersTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(responsiveSwipersTimer);
+        responsiveSwipersTimer = setTimeout(function() {
+            handleCitiesResize();
+            handleBlogResize();
+        }, 150);
+    });
+
+    // Re-init Swiper when a cities tab is shown (Swiper can't measure hidden panes)
+    document.querySelectorAll('#cities-tab button[data-bs-toggle="pill"]').forEach(function (btn) {
+        btn.addEventListener('shown.bs.tab', function () {
+            if (window.innerWidth < CITIES_BREAKPOINT) {
+                citySwipersMap.forEach(function ({ swiper }) {
+                    swiper.update();
+                });
+            }
+        });
+    });
+    // ───────────────────────────────────────────────────────────────────────────
+
     // Counter Up Animation
     const counters = document.querySelectorAll('.counter-up');
     const speed = 200; // The lower the slower
@@ -292,165 +485,158 @@ jQuery(document).ready(function () {
         });
     }
 
-    // Custom Search Dropdown Logic (Price)
-    const priceDropdownTriggers = document.querySelectorAll('.search-dropdown-trigger');
-    priceDropdownTriggers.forEach(trigger => {
-        const wrapper = trigger.closest('.custom-search-dropdown');
-        const menu = wrapper.querySelector('.search-dropdown-menu');
+    // ── Custom Search Dropdown Logic (Price) ────────────────────────────────
+    function initSearchDropdowns(context) {
+        const triggers = (context || document).querySelectorAll('.search-dropdown-trigger');
+        triggers.forEach(trigger => {
+            if (trigger._dropdownInited) return; // avoid double-binding
+            trigger._dropdownInited = true;
 
-        trigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            // Close other open search dropdowns first
-            $('.search-dropdown-menu').not(menu).addClass('d-none');
-            $('.live-search-results').addClass('d-none');
-            
-            menu.classList.toggle('d-none');
-        });
+            const wrapper = trigger.closest('.custom-search-dropdown');
+            const menu    = wrapper.querySelector('.search-dropdown-menu');
 
-        // Close when clicking outside
-        $(document).on('click', function (e) {
-            if (!$(e.target).closest('.custom-search-dropdown').is(wrapper)) {
-                menu.classList.add('d-none');
-            }
-        });
-
-        // Prevent menu close when clicking inside
-        menu.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    });
-
-    // Custom Live Search Logic
-    const liveSearchInputs = document.querySelectorAll('.live-search-input');
-    liveSearchInputs.forEach(input => {
-        const wrapper = input.closest('.custom-live-search');
-        const results = wrapper.querySelector('.live-search-results');
-        const items = results.querySelectorAll('li');
-        const isMulti = wrapper.classList.contains('custom-live-search-multi');
-
-        if (isMulti) {
-            // Multi-select mode
-            const tagsContainer = wrapper.querySelector('.live-search-tags');
-
-            input.addEventListener('focus', () => {
-                results.classList.remove('d-none');
-                filterItems(input.value);
-            });
-
-            input.addEventListener('input', () => {
-                filterItems(input.value);
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Close other open search dropdowns & live searches first
+                $(context || document).find('.search-dropdown-menu').not(menu).addClass('d-none');
+                $(context || document).find('.live-search-results').addClass('d-none');
+                menu.classList.toggle('d-none');
             });
 
             // Close when clicking outside
             $(document).on('click', function (e) {
-                if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
-                    results.classList.add('d-none');
+                if (!$(e.target).closest('.custom-search-dropdown').is(wrapper)) {
+                    menu.classList.add('d-none');
                 }
             });
 
-            items.forEach(item => {
-                const checkbox = item.querySelector('input[type="checkbox"]');
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    // Always toggle via JS to avoid double-toggle from label
-                    checkbox.checked = !checkbox.checked;
-                    item.classList.toggle('checked', checkbox.checked);
-                    renderTags();
-                    input.value = '';
-                    filterItems('');
+            // Prevent menu close when clicking inside
+            menu.addEventListener('click', (e) => e.stopPropagation());
+        });
+    }
+
+    // ── Custom Live Search Logic ────────────────────────────────────────────
+    function initLiveSearch(context) {
+        const liveSearchInputs = (context || document).querySelectorAll('.live-search-input');
+        liveSearchInputs.forEach(input => {
+            if (input._liveSearchInited) return; // avoid double-binding
+            input._liveSearchInited = true;
+
+            const wrapper       = input.closest('.custom-live-search');
+            const results       = wrapper.querySelector('.live-search-results');
+            const items         = results.querySelectorAll('li');
+            const isMulti       = wrapper.classList.contains('custom-live-search-multi');
+
+            if (isMulti) {
+                const tagsContainer = wrapper.querySelector('.live-search-tags');
+
+                input.addEventListener('focus', () => {
+                    results.classList.remove('d-none');
+                    filterItems(input.value);
                 });
-            });
 
-            function renderTags() {
-                tagsContainer.innerHTML = '';
-                const checkedItems = results.querySelectorAll('li input[type="checkbox"]:checked');
-                checkedItems.forEach(cb => {
-                    const li = cb.closest('li');
-                    const text = li.textContent.trim();
-                    const value = li.dataset.value;
+                input.addEventListener('input', () => filterItems(input.value));
 
-                    const tag = document.createElement('span');
-                    tag.className = 'live-search-tag';
-                    tag.dataset.value = value;
-                    tag.innerHTML = `${text}<button type="button" class="live-search-tag-remove"><i class="fal fa-times"></i></button>`;
+                $(document).on('click', function (e) {
+                    if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
+                        results.classList.add('d-none');
+                    }
+                });
 
-                    tag.querySelector('.live-search-tag-remove').addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        cb.checked = false;
-                        li.classList.remove('checked');
+                items.forEach(item => {
+                    const checkbox = item.querySelector('input[type="checkbox"]');
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        checkbox.checked = !checkbox.checked;
+                        item.classList.toggle('checked', checkbox.checked);
                         renderTags();
+                        input.value = '';
+                        filterItems('');
+                    });
+                });
+
+                function renderTags() {
+                    tagsContainer.innerHTML = '';
+                    const checkedItems = results.querySelectorAll('li input[type="checkbox"]:checked');
+                    checkedItems.forEach(cb => {
+                        const li    = cb.closest('li');
+                        const text  = li.textContent.trim();
+                        const value = li.dataset.value;
+
+                        const tag = document.createElement('span');
+                        tag.className    = 'live-search-tag';
+                        tag.dataset.value = value;
+                        tag.innerHTML = `${text}<button type="button" class="live-search-tag-remove"><i class="fal fa-times"></i></button>`;
+
+                        tag.querySelector('.live-search-tag-remove').addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            cb.checked = false;
+                            li.classList.remove('checked');
+                            renderTags();
+                        });
+
+                        tagsContainer.appendChild(tag);
                     });
 
-                    tagsContainer.appendChild(tag);
+                    input.placeholder = checkedItems.length > 0 ? '' : 'Select Your City';
+                }
+
+                function filterItems(val) {
+                    const filter = val.toLowerCase();
+                    let hasVisible = false;
+                    items.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        const visible = text.includes(filter);
+                        item.style.display = visible ? 'block' : 'none';
+                        if (visible) hasVisible = true;
+                    });
+                    results.classList.toggle('d-none', !hasVisible);
+                }
+
+            } else {
+                // Single-select mode
+                const hiddenInput = wrapper.querySelector('.live-search-hidden');
+
+                input.addEventListener('focus', () => {
+                    results.classList.remove('d-none');
+                    filterItems(input.value);
                 });
 
-                // Update placeholder visibility
-                if (checkedItems.length > 0) {
-                    input.placeholder = '';
-                } else {
-                    input.placeholder = 'Select Your City';
-                }
-            }
+                input.addEventListener('input', () => filterItems(input.value));
 
-            function filterItems(val) {
-                const filter = val.toLowerCase();
-                let hasVisible = false;
-                items.forEach(item => {
-                    const text = item.textContent.toLowerCase();
-                    if (text.includes(filter)) {
-                        item.style.display = 'block';
-                        hasVisible = true;
-                    } else {
-                        item.style.display = 'none';
+                $(document).on('click', function (e) {
+                    if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
+                        results.classList.add('d-none');
                     }
                 });
-                if (hasVisible) results.classList.remove('d-none');
-                else results.classList.add('d-none');
-            }
-        } else {
-            // Single-select mode (original behavior)
-            const hiddenInput = wrapper.querySelector('.live-search-hidden');
 
-            input.addEventListener('focus', () => {
-                results.classList.remove('d-none');
-                filterItems(input.value);
-            });
-
-            input.addEventListener('input', () => {
-                filterItems(input.value);
-            });
-
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.custom-live-search').is(wrapper)) {
-                    results.classList.add('d-none');
-                }
-            });
-
-            items.forEach(item => {
-                item.addEventListener('click', () => {
-                    input.value = item.innerText;
-                    hiddenInput.value = item.dataset.value;
-                    results.classList.add('d-none');
-                });
-            });
-
-            function filterItems(val) {
-                const filter = val.toLowerCase();
-                let hasVisible = false;
                 items.forEach(item => {
-                    const text = item.innerText.toLowerCase();
-                    if (text.includes(filter)) {
-                        item.style.display = 'block';
-                        hasVisible = true;
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.addEventListener('click', () => {
+                        input.value = item.innerText;
+                        if (hiddenInput) hiddenInput.value = item.dataset.value;
+                        results.classList.add('d-none');
+                    });
                 });
-                if (hasVisible) results.classList.remove('d-none');
-                else results.classList.add('d-none');
+
+                function filterItems(val) {
+                    const filter = val.toLowerCase();
+                    let hasVisible = false;
+                    items.forEach(item => {
+                        const text    = item.innerText.toLowerCase();
+                        const visible = text.includes(filter);
+                        item.style.display = visible ? 'block' : 'none';
+                        if (visible) hasVisible = true;
+                    });
+                    results.classList.toggle('d-none', !hasVisible);
+                }
             }
-        }
-    });
+        });
+    }
+
+    // Initialise on page load for the main hero form
+    initSearchDropdowns(document);
+    initLiveSearch(document);
+
 
     // Star Rating Input Functionality
     const starRatingInput = $('#starRatingInput');
@@ -586,4 +772,127 @@ jQuery(document).ready(function () {
             }
         });
     }
+
+    // ── Mobile Filter Drawer ────────────────────────────────────────────────
+    const filterBtn         = document.querySelector('.mobile-filter-btn');
+    const filterDrawer      = document.getElementById('mobileFilterDrawer');
+    const filterBackdrop    = document.getElementById('mobileFilterBackdrop');
+    const filterClose       = document.getElementById('mobileFilterClose');
+    const drawerContent     = document.getElementById('drawerSearchContent');
+    const drawerTabBtns     = document.querySelectorAll('#drawerSearchTab [data-drawer-tab]');
+
+    let drawerInitialised = false;
+
+    function openFilterDrawer() {
+        // Clone the hero search form panels into the drawer on first open
+        if (!drawerInitialised) {
+            drawerInitialised = true;
+            const tabOrder = ['buy-pane', 'rent-pane', 'investment-pane', 'project-pane'];
+            tabOrder.forEach((paneId, index) => {
+                const heroPane = document.getElementById(paneId);
+                if (!heroPane) return;
+                const panel = heroPane.querySelector('.search-form-panel');
+                if (!panel) return;
+
+                // Deep-clone the panel and strip noUiSlider elements to avoid conflicts
+                const clone = panel.cloneNode(true);
+                clone.querySelectorAll('.js-price-range-slider').forEach(s => {
+                    s.innerHTML = '';
+                    s.removeAttribute('style');
+                });
+
+                // Wrap in a visible pane div
+                const paneDiv = document.createElement('div');
+                paneDiv.className = 'drawer-tab-pane' + (index === 0 ? ' active' : '');
+                paneDiv.dataset.pane = paneId;
+                paneDiv.appendChild(clone);
+                drawerContent.appendChild(paneDiv);
+
+                // Init sliders inside drawer if noUiSlider available
+                if (typeof noUiSlider !== 'undefined') {
+                    clone.querySelectorAll('.js-price-range-slider').forEach(sliderEl => {
+                        const rangeMin  = parseFloat(sliderEl.dataset.min      || 0);
+                        const rangeMax  = parseFloat(sliderEl.dataset.max      || 1000000);
+                        const startMin  = parseFloat(sliderEl.dataset.startMin || rangeMin);
+                        const startMax  = parseFloat(sliderEl.dataset.startMax || rangeMax);
+
+                        noUiSlider.create(sliderEl, {
+                            start: [startMin, startMax],
+                            connect: true,
+                            direction: isRtl ? 'rtl' : 'ltr',
+                            range: { 'min': rangeMin, 'max': rangeMax },
+                            format: { to: v => Math.round(v), from: v => Number(v) }
+                        });
+
+                        const fmt = v => {
+                            if (v >= 1000000) return '$' + (v/1000000).toFixed(1).replace('.0','') + 'M';
+                            if (v >= 1000)    return '$' + (v/1000).toFixed(0) + 'k';
+                            return '$' + v;
+                        };
+
+                        const priceWrapper = sliderEl.closest('.price-range-wrapper');
+                        const minInput  = priceWrapper ? priceWrapper.querySelector('.js-price-range-min-input') : null;
+                        const maxInput  = priceWrapper ? priceWrapper.querySelector('.js-price-range-max-input') : null;
+                        const display   = sliderEl.closest('.custom-search-dropdown') ?
+                                          sliderEl.closest('.custom-search-dropdown').querySelector('.js-current-price-display') : null;
+
+                        sliderEl.noUiSlider.on('update', (values, handle) => {
+                            if (handle === 0 && minInput) minInput.value = values[0];
+                            if (handle === 1 && maxInput) maxInput.value = values[1];
+                            if (display) display.innerText = `${fmt(values[0])} - ${fmt(values[1])}`;
+                        });
+                        if (minInput) minInput.addEventListener('change', function() { sliderEl.noUiSlider.set([this.value, null]); });
+                        if (maxInput) maxInput.addEventListener('change', function() { sliderEl.noUiSlider.set([null, this.value]); });
+                    });
+                }
+            });
+
+            // Inject pane visibility styles once
+            const style = document.createElement('style');
+            style.textContent = '.drawer-tab-pane{display:none}.drawer-tab-pane.active{display:block}';
+            document.head.appendChild(style);
+
+            // Wire up price dropdowns and live search for the cloned drawer content
+            initSearchDropdowns(drawerContent);
+            initLiveSearch(drawerContent);
+        }
+
+        filterDrawer.classList.add('open');
+        filterBackdrop.style.display = 'block';
+        requestAnimationFrame(() => filterBackdrop.classList.add('open'));
+        document.body.style.overflow = 'hidden';
+        if (filterBtn) filterBtn.classList.add('active');
+    }
+
+    function closeFilterDrawer() {
+        filterDrawer.classList.remove('open');
+        filterBackdrop.classList.remove('open');
+        setTimeout(() => { filterBackdrop.style.display = 'none'; }, 300);
+        document.body.style.overflow = '';
+        if (filterBtn) filterBtn.classList.remove('active');
+    }
+
+    if (filterBtn)      filterBtn.addEventListener('click', openFilterDrawer);
+    if (filterClose)    filterClose.addEventListener('click', closeFilterDrawer);
+    if (filterBackdrop) filterBackdrop.addEventListener('click', closeFilterDrawer);
+
+    // Drawer tab switching
+    drawerTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            drawerTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const target = btn.dataset.drawerTab;
+            document.querySelectorAll('.drawer-tab-pane').forEach(p => {
+                p.classList.toggle('active', p.dataset.pane === target);
+            });
+        });
+    });
+
+    // Close drawer on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && filterDrawer && filterDrawer.classList.contains('open')) {
+            closeFilterDrawer();
+        }
+    });
+    // ───────────────────────────────────────────────────────────────────────────
 });
