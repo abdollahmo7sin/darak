@@ -19,7 +19,9 @@
     <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
         <div class="container d-flex justify-content-between align-items-center ">
             <a class="navbar-brand d-flex align-items-center " href="index.html">
-                <img src="images/logo.png" class="img-fluid" alt="Darak Logo">
+                <img src="images/logo.png" class="img-fluid d-none d-lg-block " alt="Darak Logo">
+                <img src="images/header-logo-blue.png" class="img-fluid d-block d-lg-none" alt="Darak Logo">
+
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -92,17 +94,17 @@
 
     <main>
         <!-- Section 1: Inner Page Hero -->
-        <section class="about-hero position-relative">
+        <section class="about-hero add-property-hero position-relative">
             <div class="container position-relative z-index-2">
                 <div class="row align-items-center">
                     <!-- Left Content Column -->
                     <div class="col-lg-8">
                         <div class="about-hero-content py-5">
                             <span
-                                class="about-hero-subtitle d-block mb-3 d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill">
-                                <i class="fas fa-home"></i> Add Property
+                                class=" d-block mb-3 d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill">
+                                <i class="fa-light fa-suitcase text-accent"></i> Add Property
                             </span>
-                            <h1 class="about-hero-title mb-4">
+                            <h1 class="about-hero-title fz55 mb-4">
                                 LIST YOUR PROPERTY
                             </h1>
                             <p class="about-hero-text text-white opacity-75 fz18">
@@ -138,70 +140,71 @@
                 <div class="mb-5">
                     <div class="d-flex align-items-center mb-2">
                         <i class="fas fa-diamond text-primary me-2 fz12"></i>
-                        <span class="text-primary fw-bold">List Your Property With Darak Real Estate</span>
+                        <span class="text-primary">List Your Property With Darak Real Estate</span>
                     </div>
-                    <h2 class="text-primary fw-bolder fz40 col-lg-6">Turn your property into a successful deal with us
+                    <h2 class="text-primary  fz40  ">Turn your property into a successful deal with us
                     </h2>
                 </div>
 
-                <div class="swiper video-carousel-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
-                                <div class="video-thumbnail-overlay"></div>
-                                <div class="video-top-badges">
-                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
-                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 12.5K</div>
-                                </div>
-                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
-                                    <i class="fas fa-play ms-1"></i>
-                                </button>
-                                <h4 class="video-thumbnail-title">Modern Kitchen Masterpiece</h4>
+
+            </div>
+            <div class="swiper video-carousel-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
+                            <div class="video-thumbnail-overlay"></div>
+                            <div class="video-top-badges">
+                                <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                <div class="video-badge-views"><i class="fal fa-eye"></i> 12.5K</div>
                             </div>
+                            <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                <i class="fas fa-play ms-1"></i>
+                            </button>
+                            <h4 class="video-thumbnail-title">Modern Kitchen Masterpiece</h4>
                         </div>
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail-card"
-                                style="background-image: url('images/beautiful-modern-kitchen-in-luxury-contemporary-ho-2022-12-13-05-00-23-utc 1.png');">
-                                <div class="video-thumbnail-overlay"></div>
-                                <div class="video-top-badges">
-                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
-                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 8.2K</div>
-                                </div>
-                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
-                                    <i class="fas fa-play ms-1"></i>
-                                </button>
-                                <h4 class="video-thumbnail-title">Luxury Penthouse Views</h4>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="video-thumbnail-card"
+                            style="background-image: url('images/beautiful-modern-kitchen-in-luxury-contemporary-ho-2022-12-13-05-00-23-utc 1.png');">
+                            <div class="video-thumbnail-overlay"></div>
+                            <div class="video-top-badges">
+                                <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                <div class="video-badge-views"><i class="fal fa-eye"></i> 8.2K</div>
                             </div>
+                            <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                <i class="fas fa-play ms-1"></i>
+                            </button>
+                            <h4 class="video-thumbnail-title">Luxury Penthouse Views</h4>
                         </div>
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail-card" style="background-image: url('images/property-1.png');">
-                                <div class="video-thumbnail-overlay"></div>
-                                <div class="video-top-badges">
-                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
-                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 15K</div>
-                                </div>
-                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
-                                    <i class="fas fa-play ms-1"></i>
-                                </button>
-                                <h4 class="video-thumbnail-title">Spacious Family Villa</h4>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="video-thumbnail-card" style="background-image: url('images/property-1.png');">
+                            <div class="video-thumbnail-overlay"></div>
+                            <div class="video-top-badges">
+                                <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                <div class="video-badge-views"><i class="fal fa-eye"></i> 15K</div>
                             </div>
+                            <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                <i class="fas fa-play ms-1"></i>
+                            </button>
+                            <h4 class="video-thumbnail-title">Spacious Family Villa</h4>
                         </div>
-                        <!-- Slide 4 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
-                                <div class="video-thumbnail-overlay"></div>
-                                <div class="video-top-badges">
-                                    <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
-                                    <div class="video-badge-views"><i class="fal fa-eye"></i> 4.1K</div>
-                                </div>
-                                <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
-                                    <i class="fas fa-play ms-1"></i>
-                                </button>
-                                <h4 class="video-thumbnail-title">Contemporary Office Space</h4>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="video-thumbnail-card" style="background-image: url('images/hero-bg.jpg');">
+                            <div class="video-thumbnail-overlay"></div>
+                            <div class="video-top-badges">
+                                <div class="video-badge-tour"><i class="fal fa-video"></i> 360° Virtual Tour</div>
+                                <div class="video-badge-views"><i class="fal fa-eye"></i> 4.1K</div>
                             </div>
+                            <button class="video-play-btn" data-bs-toggle="modal" data-bs-target="#aboutVideoModal">
+                                <i class="fas fa-play ms-1"></i>
+                            </button>
+                            <h4 class="video-thumbnail-title">Contemporary Office Space</h4>
                         </div>
                     </div>
                 </div>
@@ -214,9 +217,9 @@
                 <div class="mb-5">
                     <div class="d-flex align-items-center mb-2">
                         <i class="fas fa-diamond text-primary me-2 fz12"></i>
-                        <span class="text-primary fw-bold">Darak Features</span>
+                        <span class="text-dark">Darak Features</span>
                     </div>
-                    <h2 class="text-primary fw-bolder fz40 col-lg-6">Darak stands out for excellence and innovation.
+                    <h2 class="text-dark fz40  ">Darak stands out for excellence and innovation.
                     </h2>
                 </div>
 
@@ -228,7 +231,8 @@
                             <h3 class="feature-step-title mb-3">Client Database</h3>
                             <p class="feature-step-text">Our active database helps close deals in all property types:
                                 residential, commercial, and industrial. We bring the market to you.</p>
-                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                            <a href="#" class="feature-read-more"><i class="fa-light fa-arrow-turn-down-right"></i> Read
+                                more</a>
                         </div>
                     </div>
                     <!-- Step 2 -->
@@ -238,7 +242,8 @@
                             <h3 class="feature-step-title mb-3">Sales Team</h3>
                             <p class="feature-step-text">A strong, academically and practically trained sales team that
                                 knows how to create deals and close them efficiently.</p>
-                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                            <a href="#" class="feature-read-more"><i class="fa-light fa-arrow-turn-down-right"></i> Read
+                                more</a>
                         </div>
                     </div>
                     <!-- Step 3 -->
@@ -248,7 +253,8 @@
                             <h3 class="feature-step-title mb-3">Advertising</h3>
                             <p class="feature-step-text">Find your perfect rental. Browse listings tailored to fit your
                                 lifestyle with ease, comfort, and total peace of mind.</p>
-                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                            <a href="#" class="feature-read-more"><i class="fa-light fa-arrow-turn-down-right"></i> Read
+                                more</a>
                         </div>
                     </div>
                     <!-- Step 4 -->
@@ -258,7 +264,8 @@
                             <h3 class="feature-step-title mb-3">Speed</h3>
                             <p class="feature-step-text">Discover your dream home. Explore with expert guidance for a
                                 smooth experience, from start to finish confidently.</p>
-                            <a href="#" class="feature-read-more"><i class="fal fa-arrow-down-right"></i> Read more</a>
+                            <a href="#" class="feature-read-more"><i class="fa-light fa-arrow-turn-down-right"></i> Read
+                                more</a>
                         </div>
                     </div>
                 </div>
