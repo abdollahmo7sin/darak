@@ -19,7 +19,8 @@
     <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
         <div class="container d-flex justify-content-between align-items-center ">
             <a class="navbar-brand d-flex align-items-center " href="index.html">
-                <img src="images/logo.png" class="img-fluid" alt="">
+                <img src="images/logo.png" class="img-fluid d-none d-lg-block " alt="Darak Logo">
+                <img src="images/header-logo-blue.png" class="img-fluid d-block d-lg-none" alt="Darak Logo">
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -113,6 +114,12 @@
     <!-- ===== MAIN CONTENT AREA ===== -->
     <main class="insights-main-content py-64">
         <div class="container">
+            <div class="mobile-search-wrapper d-lg-none d-block mb-4">
+                <div class="input-wrapper-custom position-relative">
+                    <input type="text" class="form-control  rounded-pill pe-5" placeholder="Search...">
+                    <i class="fal fa-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                </div>
+            </div>
             <div class="row g-md-5">
 
                 <!-- Left Column: Blog Posts -->
@@ -126,9 +133,8 @@
                             </div>
                             <div class="blog-post-content">
                                 <div class="blog-post-meta d-flex align-items-center gap-3 text-muted fz14 mb-3">
-                                    <span>Post By <strong class="text-dark">Pintér Beatriz</strong></span>
-                                    <span class="meta-separator">•</span>
-                                    <span>May 06, 2025</span>
+                                    <span>Post By <strong class="text-dark fw-semibold">Pintér Beatriz</strong></span>
+                                    <span class="border-start ps-3">May 06, 2025</span>
                                 </div>
                                 <h2 class="blog-post-title fw-bold mb-3">
                                     <a href="#" class="text-dark">The Future Of Office Spaces In A Hybrid Work Era</a>
@@ -149,9 +155,8 @@
                             </div>
                             <div class="blog-post-content">
                                 <div class="blog-post-meta d-flex align-items-center gap-3 text-muted fz14 mb-3">
-                                    <span>Post By <strong class="text-dark">Kelemen Krisztina</strong></span>
-                                    <span class="meta-separator">•</span>
-                                    <span>May 18, 2025</span>
+                                    <span>Post By <strong class="text-dark fw-semibold">Pintér Beatriz</strong></span>
+                                    <span class="border-start ps-3">May 06, 2025</span>
                                 </div>
                                 <h2 class="blog-post-title fw-bold mb-3">
                                     <a href="#" class="text-dark">How To Identify High-Growth Neighborhoods In 2025</a>
@@ -172,9 +177,8 @@
                             </div>
                             <div class="blog-post-content">
                                 <div class="blog-post-meta d-flex align-items-center gap-3 text-muted fz14 mb-3">
-                                    <span>Post By <strong class="text-dark">Pásztor Kíra</strong></span>
-                                    <span class="meta-separator">•</span>
-                                    <span>June 15, 2025</span>
+                                    <span>Post By <strong class="text-dark fw-semibold">Pintér Beatriz</strong></span>
+                                    <span class="border-start ps-3">May 06, 2025</span>
                                 </div>
                                 <h2 class="blog-post-title fw-bold mb-3">
                                     <a href="#" class="text-dark">Will 2025 Be A Buyer's Or Seller's Market?</a>
@@ -211,103 +215,111 @@
 
                         <!-- Search Widget -->
                         <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Search</h5>
-                            <div class="input-wrapper-custom position-relative">
-                                <input type="text" class="form-control rounded-pill pe-5" placeholder="Search...">
-                                <i
-                                    class="fal fa-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                            <div class="widget-wrapper d-none d-lg-block">
+                                <h5 class="fw-bold mb-3">Search</h5>
+                                <div class="input-wrapper-custom position-relative">
+                                    <input type="text" class="form-control rounded-pill pe-5" placeholder="Search...">
+                                    <i
+                                        class="fal fa-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Categories Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Categories</h5>
-                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-dark fw-bold">
-                                        <span>Market Trends</span>
-                                        <span class="text-muted fw-normal">(22)</span>
+                            <hr class="d-none d-lg-block">
+                            <div class="widget-wrapper">
+                                <h5 class="fw-bold mb-3">Categories</h5>
+                                <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-dark fw-bold">
+                                            <span>Market Trends</span>
+                                            <span class="text-muted fw-normal">(22)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-muted">
+                                            <span>Estate News</span>
+                                            <span>(15)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-muted">
+                                            <span>Qatar Updates & Events</span>
+                                            <span>(18)</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="widget-wrapper">
+                                <h5 class="fw-bold mb-3">Recent Posts</h5>
+                                <div class="d-flex flex-column gap-3">
+                                    <a href="#"
+                                        class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
+                                        <img src="images/post-1.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                22, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Why Millennials Are
+                                                Reshaping The Real...</h6>
+                                        </div>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-muted">
-                                        <span>Estate News</span>
-                                        <span>(15)</span>
+                                    <a href="#"
+                                        class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
+                                        <img src="images/post-2.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                12, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Technology Trends
+                                                Redefining Modern...</h6>
+                                        </div>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-muted">
-                                        <span>Qatar Updates & Events</span>
-                                        <span>(18)</span>
+                                    <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
+                                        <img src="images/post-3.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                14, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Cities With The Highest
+                                                Roi
+                                                For Airbnb Rentals...</h6>
+                                        </div>
                                     </a>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
 
-                        <!-- Recent Posts Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Recent Posts</h5>
-                            <div class="d-flex flex-column gap-3">
-                                <a href="#"
-                                    class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
-                                    <img src="images/post-1.jpg" alt="Mini Post" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 22, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Why Millennials Are
-                                            Reshaping The Real...</h6>
+                                <hr>
+                                <div class="widget-wrapper">
+                                    <h5 class="fw-bold mb-3">Subscribe Newsletter</h5>
+                                    <div class="input-wrapper-custom position-relative">
+                                        <input type="email" class="form-control rounded-pill pe-5"
+                                            placeholder="Email address">
+                                        <button
+                                            class="btn p-0 position-absolute top-50 end-0 translate-middle-y me-3 text-primary border-0 bg-transparent">
+                                            <i class="fal fa-paper-plane"></i>
+                                        </button>
                                     </div>
-                                </a>
-                                <a href="#"
-                                    class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
-                                    <img src="images/post-2.jpg" alt="Mini Post" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 12, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Technology Trends
-                                            Redefining Modern...</h6>
+                                </div>
+                                <hr>
+
+                                <!-- Tags Widget -->
+                                <div class="widget-wrapper">
+                                    <h5 class="fw-bold mb-3">Tags</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <a href="#" class="tag-badge-pill active">Financing</a>
+                                        <a href="#" class="tag-badge-pill">Mortgage</a>
+                                        <a href="#" class="tag-badge-pill">Rental</a>
+                                        <a href="#" class="tag-badge-pill">Urban</a>
+                                        <a href="#" class="tag-badge-pill">Investment</a>
+                                        <a href="#" class="tag-badge-pill">Commercial</a>
+                                        <a href="#" class="tag-badge-pill">Property</a>
+                                        <a href="#" class="tag-badge-pill">Luxury</a>
+                                        <a href="#" class="tag-badge-pill">Market</a>
                                     </div>
-                                </a>
-                                <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
-                                    <img src="images/post-3.jpg" alt="Mini Post" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 14, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Cities With The Highest Roi
-                                            For Airbnb Rentals...</h6>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Subscribe Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Subscribe Newsletter</h5>
-                            <div class="input-wrapper-custom position-relative">
-                                <input type="email" class="form-control rounded-pill pe-5" placeholder="Email address">
-                                <button
-                                    class="btn p-0 position-absolute top-50 end-0 translate-middle-y me-3 text-primary border-0 bg-transparent">
-                                    <i class="fal fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Tags Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Tags</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="#" class="tag-badge-pill active">Financing</a>
-                                <a href="#" class="tag-badge-pill">Mortgage</a>
-                                <a href="#" class="tag-badge-pill">Rental</a>
-                                <a href="#" class="tag-badge-pill">Urban</a>
-                                <a href="#" class="tag-badge-pill">Investment</a>
-                                <a href="#" class="tag-badge-pill">Commercial</a>
-                                <a href="#" class="tag-badge-pill">Property</a>
-                                <a href="#" class="tag-badge-pill">Luxury</a>
-                                <a href="#" class="tag-badge-pill">Market</a>
-                            </div>
-                        </div>
-
                     </aside>
                 </div>
 
@@ -326,7 +338,7 @@
                 </h3>
                 <div class="row g-4 mt-3">
                     <!-- Top Areas -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-6">
                         <h5 class="footer-link-heading">Top Areas</h5>
                         <ul class="footer-link-list">
                             <li><a href="#">Most In-Demand Areas</a></li>
@@ -336,7 +348,7 @@
                         </ul>
                     </div>
                     <!-- For Sale -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-6">
                         <h5 class="footer-link-heading">For Sale</h5>
                         <ul class="footer-link-list">
                             <li><a href="#">Villas for Sale</a></li>
@@ -346,7 +358,7 @@
                         </ul>
                     </div>
                     <!-- For Rent -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-6">
                         <h5 class="footer-link-heading">For Rent</h5>
                         <ul class="footer-link-list">
                             <li><a href="#">Apartments for Rent</a></li>
@@ -356,7 +368,7 @@
                         </ul>
                     </div>
                     <!-- Investments -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-6">
                         <h5 class="footer-link-heading">Investments</h5>
                         <ul class="footer-link-list">
                             <li><a href="#">Investment Properties with 9% Return</a></li>
@@ -383,7 +395,7 @@
                     <a href="#" class="footer-tag">office</a>
                 </div>
             </div>
-        </div>
+        </div><!-- /.footer-popular-search -->
 
         <!-- Divider -->
         <div class="footer-divider"></div>
@@ -394,7 +406,8 @@
                 <div class="row g-md-5">
 
                     <!-- Col 1: Logo + Info -->
-                    <div class="col-lg-4 col-md-12">
+                    <div class="col-lg-5 col-md-12">
+                        <!-- Logo placeholder -->
                         <div class="footer-logo mb-4">
                             <img src="images/logo.png" class="img-fluid" alt="">
                         </div>
@@ -410,7 +423,7 @@
                     </div>
 
                     <!-- Col 2: Quick Links -->
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <h5 class="footer-col-heading">Quick Links</h5>
                         <ul class="footer-link-list footer-link-list--main">
                             <li><a href="#">About Us</a></li>
@@ -425,7 +438,7 @@
                     <!-- Col 3: Newsletter -->
                     <div class="col-lg-4 col-md-6">
                         <h5 class="footer-col-heading">Join Our Newsletter</h5>
-                        <p class="footer-info-text mb-4">Sign up for updates on our latest news.</p>
+                        <p class="footer-info-text mb-4 fz18">Sign up for updates on our latest news.</p>
                         <div class="footer-newsletter-form">
                             <input type="email" class="footer-newsletter-input" placeholder="Enter your e-mail">
                             <button class="footer-newsletter-btn" aria-label="Subscribe">
@@ -433,14 +446,14 @@
                             </button>
                         </div>
                         <p class="footer-newsletter-note mt-3">
-                            By clicking subscribe, you agree to the <a href="#">Terms of Service</a> and <a
+                            By clicking subscribe, you agree to the <br> <a href="#">Terms of Service</a> and <a
                                 href="#">Privacy Policy.</a>
                         </p>
                     </div>
 
                 </div>
             </div>
-        </div>
+        </div><!-- /.footer-main -->
 
         <!-- Footer Bar -->
         <div class="footer-bar">
@@ -457,7 +470,7 @@
                     <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-        </div>
+        </div><!-- /.footer-bar -->
 
     </footer>
 

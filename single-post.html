@@ -19,7 +19,8 @@
     <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
         <div class="container d-flex justify-content-between align-items-center ">
             <a class="navbar-brand d-flex align-items-center " href="index.html">
-                <img src="images/logo.png" class="img-fluid" alt="">
+                <img src="images/logo.png" class="img-fluid d-none d-lg-block " alt="Darak Logo">
+                <img src="images/header-logo-blue.png" class="img-fluid d-block d-lg-none" alt="Darak Logo">
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -167,10 +168,10 @@
 
                             <!-- Image Gallery -->
                             <div class="row g-4 mb-5">
-                                <div class="col-md-6">
+                                <div class="col-6">
                                     <img src="images/post-gallery-1.jpg" alt="Interior 1" class="img-fluid rounded-4">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-6">
                                     <img src="images/post-gallery-2.jpg" alt="Interior 2" class="img-fluid rounded-4">
                                 </div>
                             </div>
@@ -309,12 +310,12 @@
 
                             <form action="#" class="review-form">
                                 <div class="row g-4 mb-4">
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label fw-bold fz14">Name</label>
                                         <input type="text" class="form-control form-control-darak"
                                             placeholder="John Marry">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label fw-bold fz14">Email</label>
                                         <input type="email" class="form-control form-control-darak"
                                             placeholder="info@gmail.com">
@@ -357,97 +358,140 @@
 
                         <!-- Search Widget -->
                         <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Search</h5>
-                            <div class="input-wrapper-custom position-relative">
-                                <input type="text" class="form-control form-control-darak rounded-pill pe-5"
-                                    placeholder="Search...">
-                                <i
-                                    class="fal fa-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
+                            <div class="widget-wrapper">
+                                <div class="author-profile-info  ">
+                                    <div class="d-flex gap-3 align-items-center mb-4">
+                                        <div
+                                            class="author-avatar-circle mx-auto   d-flex align-items-center justify-content-center">
+                                            <img src="images/header-logo-blue.png" alt="Darak"
+                                                class="img-fluid flex-shrink-0">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-bold m-0">Darak Real Estate</h5>
+                                            <p class="text-muted fz12  mb-1">200 Follower</p>
+                                            <button
+                                                class="btn btn-accent rounded-pill px-4  py-1 fz14    ">Follow</button>
 
-                        <!-- Categories Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Categories</h5>
-                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-dark fw-bold">
-                                        <span>Market Trends</span>
-                                        <span class="text-muted fw-normal">(22)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-muted">
-                                        <span>Estate News</span>
-                                        <span>(15)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between text-muted">
-                                        <span>Qatar Updates & Events</span>
-                                        <span>(18)</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                        </div>
 
-                        <!-- Recent Posts Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Recent Posts</h5>
-                            <div class="d-flex flex-column gap-3">
-                                <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
-                                    <img src="images/post-1.jpg" alt="Mini" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 22, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Why Millennials Are
-                                            Reshaping The Market...</h6>
                                     </div>
-                                </a>
-                                <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
-                                    <img src="images/post-2.jpg" alt="Mini" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 12, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Technology Trends
-                                            Redefining Modern...</h6>
+                                    <p class="text-muted fz13 mb-4">Darak Real Estate is dedicated to providing
+                                        expert insights and analysis on the latest trends and opportunities in
+                                        the
+                                        real estate market. With a focus on innovation and customer
+                                        satisfaction, we
+                                        strive to empower our clients with the knowledge to make informed
+                                        decisions.
+                                    </p>
+                                    <div class="author-social-links d-flex justify-content-center gap-2 mb-2">
+                                        <a href="#" class="social-circle-link"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-circle-link"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#" class="social-circle-link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="social-circle-link"><i class="fab fa-snapchat-ghost"></i></a>
+                                        <a href="#" class="social-circle-link"><i
+                                                class="fal fa-universal-access"></i></a>
+                                        <a href="#" class="social-circle-link"><i class="fab fa-tiktok"></i></a>
+                                        <a href="#" class="social-circle-link"><i class="fab fa-youtube"></i></a>
                                     </div>
-                                </a>
-                                <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
-                                    <img src="images/post-3.jpg" alt="Mini" class="rounded-3"
-                                        style="width: 70px; height: 70px; object-fit: cover;">
-                                    <div>
-                                        <span class="text-muted fz12 d-block mb-1">October 14, 2025</span>
-                                        <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Cities With The Highest Roi
-                                            Rentals...</h6>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="widget-wrapper">
+                                <h5 class="fw-bold mb-3">Categories</h5>
+                                <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-dark fw-bold">
+                                            <span>Market Trends</span>
+                                            <span class="text-muted fw-normal">(22)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-muted">
+                                            <span>Estate News</span>
+                                            <span>(15)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between text-muted">
+                                            <span>Qatar Updates & Events</span>
+                                            <span>(18)</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="widget-wrapper">
+                                <h5 class="fw-bold mb-3">Recent Posts</h5>
+                                <div class="d-flex flex-column gap-3">
+                                    <a href="#"
+                                        class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
+                                        <img src="images/post-1.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                22, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Why Millennials Are
+                                                Reshaping The Real...</h6>
+                                        </div>
+                                    </a>
+                                    <a href="#"
+                                        class="recent-post-mini d-flex gap-3 text-decoration-none border-bottom pb-3">
+                                        <img src="images/post-2.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                12, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Technology Trends
+                                                Redefining Modern...</h6>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="recent-post-mini d-flex gap-3 text-decoration-none">
+                                        <img src="images/post-3.jpg" alt="Mini Post" class="rounded-3"
+                                            style="width: 70px; height: 70px; object-fit: cover;">
+                                        <div>
+                                            <span class="text-muted fz12 d-block mb-1"><strong
+                                                    class="text-dark border-end pe-1 me-1 fw-semibold">Calvin</strong>October
+                                                14, 2025</span>
+                                            <h6 class="text-dark fw-bold mb-0 fz14 line-clamp-2">Cities With The Highest
+                                                Roi
+                                                For Airbnb Rentals...</h6>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <hr>
+                                <div class="widget-wrapper">
+                                    <h5 class="fw-bold mb-3">Subscribe Newsletter</h5>
+                                    <div class="input-wrapper-custom position-relative">
+                                        <input type="email" class="form-control rounded-pill pe-5"
+                                            placeholder="Email address">
+                                        <button
+                                            class="btn p-0 position-absolute top-50 end-0 translate-middle-y me-3 text-primary border-0 bg-transparent">
+                                            <i class="fal fa-paper-plane"></i>
+                                        </button>
                                     </div>
-                                </a>
-                            </div>
-                        </div>
+                                </div>
+                                <hr>
 
-                        <!-- Subscribe Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Subscribe Newsletter</h5>
-                            <div class="input-wrapper-custom position-relative">
-                                <input type="email" class="form-control form-control-darak rounded-pill pe-5"
-                                    placeholder="Email address">
-                                <button
-                                    class="btn p-0 position-absolute top-50 end-0 translate-middle-y me-3 text-primary border-0 bg-transparent">
-                                    <i class="fal fa-paper-plane"></i>
-                                </button>
+                                <!-- Tags Widget -->
+                                <div class="widget-wrapper">
+                                    <h5 class="fw-bold mb-3">Tags</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <a href="#" class="tag-badge-pill active">Financing</a>
+                                        <a href="#" class="tag-badge-pill">Mortgage</a>
+                                        <a href="#" class="tag-badge-pill">Rental</a>
+                                        <a href="#" class="tag-badge-pill">Urban</a>
+                                        <a href="#" class="tag-badge-pill">Investment</a>
+                                        <a href="#" class="tag-badge-pill">Commercial</a>
+                                        <a href="#" class="tag-badge-pill">Property</a>
+                                        <a href="#" class="tag-badge-pill">Luxury</a>
+                                        <a href="#" class="tag-badge-pill">Market</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Tags Widget -->
-                        <div class="sidebar-widget-card border rounded-4 p-4">
-                            <h5 class="fw-bold mb-3">Tags</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="#" class="tag-badge-pill active">Financing</a>
-                                <a href="#" class="tag-badge-pill">Mortgage</a>
-                                <a href="#" class="tag-badge-pill">Rental</a>
-                                <a href="#" class="tag-badge-pill">Market</a>
-                            </div>
-                        </div>
                     </aside>
                 </div>
 
