@@ -19,7 +19,8 @@
     <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
         <div class="container d-flex justify-content-between align-items-center ">
             <a class="navbar-brand d-flex align-items-center " href="#">
-                <img src="images/logo.png" class="img-fluid" alt="">
+                <img src="images/logo.png" class="img-fluid d-none d-lg-block " alt="Darak Logo">
+                <img src="images/header-logo-blue.png" class="img-fluid d-block d-lg-none" alt="Darak Logo">
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -98,10 +99,10 @@
                     <!-- Left Column -->
                     <div class="col-lg-6">
                         <div class="about-hero-content py-5">
-                            <span class="badge bg-glass rounded-pill px-3 py-2 text-white mb-4">
-                                <i class="fal fa-home me-2"></i> Evaluate Property
+                            <span class="badge bg-glass rounded-pill px-3 py-2 text-white mb-4 fw-normal">
+                                <i class="fal fa-briefcase text-accent me-1"></i> Evaluate Property
                             </span>
-                            <h1 class="about-hero-title mb-4">
+                            <h1 class="about-hero-title fz50 mb-4">
                                 EVALUATE PROPERTY
                             </h1>
                             <p class="about-hero-text text-white opacity-75 fz18 mb-5">
@@ -109,7 +110,7 @@
                                 value now! Get an appraisal/rate valuation based on actual market sales in less than 30
                                 seconds, with no drill and no commitment.
                             </p>
-                            <a href="#" class="btn btn-accent rounded-pill px-5 py-3 fz18 fw-bold">
+                            <a href="#" class="btn btn-accent rounded-pill px-5 py-3 fz18  ">
                                 View Darak House <i class="fal fa-arrow-right ms-2 mt-1"></i>
                             </a>
                         </div>
@@ -120,7 +121,7 @@
                         <div class="evaluation-form-card">
                             <form action="#">
                                 <div class="row g-3">
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Property Location*</label>
                                         <select class="form-select">
                                             <option selected disabled>Select</option>
@@ -129,7 +130,7 @@
                                             <option>The Pearl</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Property Type*</label>
                                         <select class="form-select">
                                             <option selected disabled>Select</option>
@@ -138,7 +139,7 @@
                                             <option>Office</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Property Age*</label>
                                         <select class="form-select">
                                             <option selected disabled>Select</option>
@@ -148,7 +149,7 @@
                                             <option>10+ Years</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Property Finishing*</label>
                                         <select class="form-select">
                                             <option selected disabled>Select</option>
@@ -157,7 +158,7 @@
                                             <option>Standard</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Property Occupancy*</label>
                                         <select class="form-select">
                                             <option selected disabled>Select</option>
@@ -165,13 +166,12 @@
                                             <option>Occupied</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <label class="form-label">Monthly Rate*</label>
                                         <input type="text" class="form-control" placeholder="Your Name">
                                     </div>
                                     <div class="col-12 mt-4">
-                                        <button type="submit"
-                                            class="btn btn-accent w-100 py-3 rounded-pill fw-bold fz18">
+                                        <button type="submit" class="btn btn-accent w-100 py-3 rounded-pill fz18">
                                             Evaluate Home <i class="fal fa-arrow-right ms-2 mt-1"></i>
                                         </button>
                                     </div>
@@ -214,8 +214,8 @@
                     <!-- Right Column: Features -->
                     <div class="col-lg-6 offset-lg-1">
                         <div class="features-content ps-lg-4">
-                            <span class="text-muted fw-bold fz14 text-uppercase mb-2 d-block">WHY CHOOSE US</span>
-                            <h2 class="display-5 fw-bold text-primary mb-4">
+                            <span class="opacity-50 fw-bold fz14 text-uppercase mb-2 d-block">WHY CHOOSE US</span>
+                            <h2 class="fz45 fw-bold   mb-4">
                                 Why Choose Darak To Value Your Property?
                             </h2>
 
@@ -223,10 +223,16 @@
                                 <!-- Feature 1 -->
                                 <div class="feature-item-v3 d-flex align-items-start">
                                     <div class="feature-icon-box">
-                                        <i class="fal fa-chart-line"></i>
+                                        <svg width="42" height="53" viewBox="0 0 42 53" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.625 4.04481e-08C4.13316 4.04481e-08 2.70242 0.592632 1.64752 1.64752C0.592632 2.70242 0 4.13316 0 5.625V46.875C0 48.3668 0.592632 49.7976 1.64752 50.8525C2.70242 51.9074 4.13316 52.5 5.625 52.5H35.625C37.1168 52.5 38.5476 51.9074 39.6025 50.8525C40.6574 49.7976 41.25 48.3668 41.25 46.875V16.5525C41.2492 15.0614 40.6564 13.6317 39.6019 12.5775L28.6744 1.64625C27.6194 0.591972 26.189 -0.00017869 24.6975 4.04481e-08H5.625ZM3.75 5.625C3.75 5.12772 3.94754 4.65081 4.29918 4.29918C4.65081 3.94754 5.12772 3.75 5.625 3.75H22.5V13.125C22.5 14.6168 23.0926 16.0476 24.1475 17.1025C25.2024 18.1574 26.6332 18.75 28.125 18.75H37.5V46.875C37.5 47.3723 37.3025 47.8492 36.9508 48.2008C36.5992 48.5525 36.1223 48.75 35.625 48.75H5.625C5.12772 48.75 4.65081 48.5525 4.29918 48.2008C3.94754 47.8492 3.75 47.3723 3.75 46.875V5.625ZM36.7238 15H28.125C27.6277 15 27.1508 14.8025 26.7992 14.4508C26.4475 14.0992 26.25 13.6223 26.25 13.125V4.52625L36.7238 15ZM13.125 20.625C13.125 20.1277 12.9275 19.6508 12.5758 19.2992C12.2242 18.9475 11.7473 18.75 11.25 18.75C10.7527 18.75 10.2758 18.9475 9.92418 19.2992C9.57254 19.6508 9.375 20.1277 9.375 20.625V43.125C9.375 43.6223 9.57254 44.0992 9.92418 44.4508C10.2758 44.8025 10.7527 45 11.25 45C11.7473 45 12.2242 44.8025 12.5758 44.4508C12.9275 44.0992 13.125 43.6223 13.125 43.125V20.625ZM22.5 35.625C22.5 35.1277 22.3025 34.6508 21.9508 34.2992C21.5992 33.9475 21.1223 33.75 20.625 33.75C20.1277 33.75 19.6508 33.9475 19.2992 34.2992C18.9475 34.6508 18.75 35.1277 18.75 35.625V43.125C18.75 43.6223 18.9475 44.0992 19.2992 44.4508C19.6508 44.8025 20.1277 45 20.625 45C21.1223 45 21.5992 44.8025 21.9508 44.4508C22.3025 44.0992 22.5 43.6223 22.5 43.125V35.625ZM30 26.25C30.4973 26.25 30.9742 26.4475 31.3258 26.7992C31.6775 27.1508 31.875 27.6277 31.875 28.125V43.125C31.875 43.6223 31.6775 44.0992 31.3258 44.4508C30.9742 44.8025 30.4973 45 30 45C29.5027 45 29.0258 44.8025 28.6742 44.4508C28.3225 44.0992 28.125 43.6223 28.125 43.125V28.125C28.125 27.6277 28.3225 27.1508 28.6742 26.7992C29.0258 26.4475 29.5027 26.25 30 26.25Z"
+                                                fill="black" />
+                                        </svg>
+
                                     </div>
                                     <div class="ms-3">
-                                        <h4 class="fw-bold text-primary mb-1">Data-Driven Valuation</h4>
+                                        <h4 class="fw-bold fz24 mb-1">Data-Driven Valuation</h4>
                                         <p class="text-muted mb-0">
                                             We use real market data and accurate property comparisons — no guessing or
                                             overpricing.
@@ -237,10 +243,27 @@
                                 <!-- Feature 2 -->
                                 <div class="feature-item-v3 d-flex align-items-start">
                                     <div class="feature-icon-box">
-                                        <i class="fal fa-user-check"></i>
+                                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1_11958)">
+                                                <path
+                                                    d="M27.1634 15.8571C26.8689 15.0203 26.322 14.2955 25.5981 13.7827C24.8742 13.27 24.0091 12.9945 23.122 12.9942H19.8005C18.8583 12.9969 17.9501 13.347 17.25 13.9776C16.5499 14.6082 16.107 15.4749 16.0061 16.4117C15.9053 17.3486 16.1536 18.2897 16.7035 19.0548C17.2533 19.82 18.0662 20.3554 18.9863 20.5585L24.0348 21.6642C25.0679 21.8897 25.9811 22.4891 26.5989 23.3471C27.2167 24.2052 27.4956 25.2614 27.3818 26.3126C27.268 27.3638 26.7696 28.3358 25.9825 29.0418C25.1954 29.7478 24.175 30.1379 23.1177 30.1371H20.2591C19.3731 30.1374 18.5087 29.8632 17.7849 29.352C17.0612 28.8409 16.5136 28.118 16.2177 27.2828M21.6948 12.9942V8.7085M21.6948 34.4228V30.1371M29.8677 57.8528V35.3528C29.8677 33.932 30.4321 32.5694 31.4368 31.5647C32.4414 30.56 33.804 29.9956 35.2248 29.9956C36.6456 29.9956 38.0082 30.56 39.0129 31.5647C40.0176 32.5694 40.582 33.932 40.582 35.3528V47.1385H49.1534C51.4267 47.1385 53.6069 48.0416 55.2143 49.649C56.8218 51.2565 57.7248 53.4366 57.7248 55.7099V57.8528"
+                                                    stroke="black" stroke-width="3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M21.6991 40.9885C17.745 40.988 13.8853 39.7804 10.6361 37.5271C7.38679 35.2739 4.90282 32.0824 3.51626 28.3794C2.1297 24.6763 1.90663 20.6383 2.87688 16.8051C3.84713 12.9719 5.96445 9.52619 8.94576 6.92875C11.9271 4.33131 15.6303 2.7059 19.5603 2.26983C23.4902 1.83376 27.4597 2.60782 30.9379 4.48852C34.4161 6.36922 37.2373 9.26691 39.0242 12.7942C40.8112 16.3215 41.4788 20.3102 40.9377 24.2271"
+                                                    stroke="black" stroke-width="3" stroke-linecap="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1_11958">
+                                                    <rect width="60" height="60" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
                                     </div>
                                     <div class="ms-3">
-                                        <h4 class="fw-bold text-primary mb-1">Expert Evaluation With Precision</h4>
+                                        <h4 class="fw-bold fz24 mb-1">Expert Evaluation With Precision</h4>
                                         <p class="text-muted mb-0">
                                             As investment experts, we evaluate your property in detail—residential or
                                             investment—ensuring the best fair valuation for marketing.
@@ -251,10 +274,16 @@
                                 <!-- Feature 3 -->
                                 <div class="feature-item-v3 d-flex align-items-start">
                                     <div class="feature-icon-box">
-                                        <i class="fal fa-diamond"></i>
+                                        <svg width="56" height="46" viewBox="0 0 56 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M54.9619 15.4805L41.8369 0.480513C41.7048 0.329489 41.5419 0.208478 41.3592 0.125607C41.1765 0.0427353 40.9781 -7.72802e-05 40.7775 4.44349e-05H14.5275C14.3277 -0.00154339 14.13 0.0394398 13.9473 0.120266C13.7646 0.201091 13.6013 0.319905 13.4681 0.468794L0.343108 15.4688C0.116655 15.7303 -0.00543535 16.0662 0.000185809 16.4121C0.00580697 16.758 0.138745 17.0897 0.373577 17.3438L26.6236 45.4688C26.7552 45.61 26.9144 45.7227 27.0914 45.7997C27.2685 45.8767 27.4594 45.9165 27.6525 45.9165C27.8455 45.9165 28.0365 45.8767 28.2135 45.7997C28.3905 45.7227 28.5498 45.61 28.6814 45.4688L54.9314 17.3438C55.163 17.0905 55.294 16.7611 55.2996 16.4179C55.3052 16.0747 55.1851 15.7413 54.9619 15.4805ZM15.4509 17.8125L23.5603 38.0836L4.6392 17.8125H15.4509ZM36.8259 17.8125L27.6525 40.7438L18.479 17.8125H36.8259ZM19.215 15L27.6525 3.75004L36.09 15H19.215ZM39.854 17.8125H50.6658L31.7447 38.0836L39.854 17.8125ZM50.804 15H39.6056L30.465 2.81254H40.14L50.804 15ZM15.165 2.81254H24.84L15.6994 15H4.50092L15.165 2.81254Z"
+                                                fill="#111111" />
+                                        </svg>
+
                                     </div>
                                     <div class="ms-3">
-                                        <h4 class="fw-bold text-primary mb-1">Experienced Real Estate Specialists</h4>
+                                        <h4 class="fw-bold fz24 mb-1">Experienced Real Estate Specialists</h4>
                                         <p class="text-muted mb-0">
                                             Experience since 2012 in the real estate sector — our experts hold top
                                             academic qualifications and practical experience to deliver an ideal
@@ -293,7 +322,7 @@
                             </div>
 
                             <!-- Bottom: Prev/Progress/Next nav -->
-                            <div class="testi-nav">
+                            <div class="testi-nav d-none d-lg-flex">
                                 <button class="testi-nav-btn testi-button-prev">Prev</button>
                                 <div class="testi-progressbar"></div>
                                 <button class="testi-nav-btn testi-button-next">Next</button>
@@ -360,6 +389,12 @@
 
                                 </div><!-- /.swiper-wrapper -->
                             </div><!-- /.swiper -->
+                            <!-- Mobile navs: Prev/Progress/Next nav -->
+                            <div class="testi-nav w-100 d-flex d-lg-none">
+                                <button class="testi-nav-btn testi-button-prev">Prev</button>
+                                <div class="testi-progressbar"></div>
+                                <button class="testi-nav-btn testi-button-next">Next</button>
+                            </div>
                         </div>
 
                     </div><!-- /.row -->
