@@ -17,8 +17,9 @@
     <!-- ===== NAVBAR (same as index.html) ===== -->
     <nav class="custom-navbar bg-transparent position-absolute w-100 top-0 start-0 py-3">
         <div class="container d-flex justify-content-between align-items-center ">
-            <a class="navbar-brand d-flex align-items-center " href="index.html">
-                <img src="images/logo.png" class="img-fluid" alt="">
+            <a class="navbar-brand d-flex align-items-center " href="#">
+                <img src="images/logo.png" class="img-fluid d-none d-lg-block " alt="Darak Logo">
+                <img src="images/header-logo-blue.png" class="img-fluid d-block d-lg-none" alt="Darak Logo">
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -32,9 +33,9 @@
                 <!-- Navigation Links -->
                 <ul
                     class="list-unstyled mb-0 gap-1 gap-xl-2 align-items-center d-flex flex-column flex-lg-row w-100 w-lg-auto mb-4 mb-lg-0 mt-4 mt-lg-0">
-                    <li><a class="custom-nav-link" href="index.html">Home</a></li>
+                    <li><a class="custom-nav-link active" href="#">Home</a></li>
                     <li><a class="custom-nav-link" href="#">About us</a></li>
-                    <li><a class="custom-nav-link active" href="properties.html">Properties</a></li>
+                    <li><a class="custom-nav-link" href="#">Properties</a></li>
                     <li class="custom-dropdown position-relative">
                         <a class="custom-nav-link d-flex align-items-center gap-1" href="javascript:void(0)"
                             id="servicesDropdown">
@@ -115,11 +116,21 @@
             <div class="col-lg-3">
                 <div class="terms-sidebar-wrapper sticky-top" style="top: 120px;">
                     <ul id="termsSidebar" class="nav list-unstyled terms-sidebar-list d-flex flex-column gap-3">
-                        <li class="nav-item terms-nav-item"><a href="#terms" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">1. Terms</a></li>
-                        <li class="nav-item terms-nav-item"><a href="#limitations" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">2. Limitations</a></li>
-                        <li class="nav-item terms-nav-item"><a href="#revisions" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">3. Revisions And Errata</a></li>
-                        <li class="nav-item terms-nav-item"><a href="#modifications" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">4. Site Terms Of Use Modifications</a></li>
-                        <li class="nav-item terms-nav-item"><a href="#risks" class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">5. Risks</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#terms"
+                                class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">1. Terms</a>
+                        </li>
+                        <li class="nav-item terms-nav-item"><a href="#limitations"
+                                class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">2.
+                                Limitations</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#revisions"
+                                class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">3. Revisions And
+                                Errata</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#modifications"
+                                class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">4. Site Terms Of
+                                Use Modifications</a></li>
+                        <li class="nav-item terms-nav-item"><a href="#risks"
+                                class="nav-link text-muted fw-bold p-0 d-flex align-items-center gap-2">5. Risks</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -132,19 +143,31 @@
                     <!-- Section 1: Terms -->
                     <section id="terms" class="mb-5">
                         <h3 class="fw-bold text-dark mb-4">1. Terms</h3>
-                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim condimentum.</p>
-                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus. Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
-                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget
+                            sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim
+                            condimentum.</p>
+                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat
+                            vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus.
+                            Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et
+                            malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex
+                            pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi
+                            finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie</p>
                     </section>
 
                     <!-- Section 2: Limitations -->
                     <section id="limitations" class="mb-5">
                         <h3 class="fw-bold text-dark mb-4 fz24">2. Limitations</h3>
-                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus
+                            tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie a, finibus nec ex.</p>
                         <ul class="list-unstyled d-flex flex-column gap-3 mb-4 ps-3">
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
-                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
+                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum
+                                    tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
                             </li>
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
@@ -152,28 +175,43 @@
                             </li>
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
-                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</span>
+                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit
+                                    amet molestie a, finibus nec ex.</span>
                             </li>
                         </ul>
-                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi
+                            finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie</p>
                     </section>
 
                     <!-- Section 3: Revisions And Errata -->
                     <section id="revisions" class="mb-5">
                         <h3 class="fw-bold text-dark mb-4 fz24">3. Revisions And Errata</h3>
-                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim condimentum.</p>
-                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus. Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
-                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                        <p class="text-muted fz14 lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Integer sed euismod justo, sit amet efficitur dui. Aliquam sodales vestibulum velit, eget
+                            sollicitudin quam. Donec non aliquam eros. Etiam sit amet lectus vel justo dignissim
+                            condimentum.</p>
+                        <p class="text-muted fz14 lh-lg">In malesuada neque quis libero laoreet posuere. In consequat
+                            vitae ligula quis rutrum. Morbi dolor orci, maximus a pulvinar sed, bibendum ac lacus.
+                            Suspendisse in consectetur lorem. Pellentesque habitant morbi tristique senectus et netus et
+                            malesuada fames ac turpis egestas. Aliquam elementum, est sed interdum cursus, felis ex
+                            pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi
+                            finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie a, finibus nec ex.</p>
                     </section>
 
                     <!-- Section 4: Site Terms Of Use Modifications -->
                     <section id="modifications" class="mb-5">
                         <h3 class="fw-bold text-dark mb-4 fz24">4. Site Terms Of Use Modifications</h3>
-                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                        <p class="text-muted fz14 lh-lg">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus
+                            tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie</p>
                         <ul class="list-unstyled d-flex flex-column gap-3 mb-4 ps-3">
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
-                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
+                                <span>Aliquam elementum, est sed interdum cursus, felis ex pharetra nisi, ut elementum
+                                    tortor urna eu nulla. Donec rhoncus in purus quis blandit.</span>
                             </li>
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
@@ -181,16 +219,21 @@
                             </li>
                             <li class="text-muted fz14 d-flex gap-2 align-items-start">
                                 <span class="text-dark">·</span>
-                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</span>
+                                <span>Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit
+                                    amet molestie a, finibus nec ex.</span>
                             </li>
                         </ul>
-                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi
+                            finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie</p>
                     </section>
 
                     <!-- Section 5: Risks -->
                     <section id="risks">
                         <h3 class="fw-bold text-dark mb-4 fz24">5. Risks</h3>
-                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex, ullamcorper sit amet molestie a, finibus nec ex.</p>
+                        <p class="text-muted fz14 lh-lg mb-0">Etiam eleifend metus at nunc ultricies facilisis. Morbi
+                            finibus tristique interdum. Nullam vel eleifend est, eu posuere risus. Vestibulum ligula ex,
+                            ullamcorper sit amet molestie a, finibus nec ex.</p>
                     </section>
                 </div>
             </div>

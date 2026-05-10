@@ -4207,11 +4207,24 @@ a.navbar-brand img {
 
 @media (max-width: 767.98px) {
     .inner-page-hero {
-        border-end-start-radius: 50px;
-        border-end-end-radius: 50px;
+        border-end-start-radius: 30px;
+        border-end-end-radius: 30px;
         min-height: 220px;
         align-items: end !important;
 
+        h1 {
+            font-size: 25px;
+        }
+    }
+
+    .faq-category-section {
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+        }
     }
 }
 
@@ -5436,6 +5449,7 @@ a.navbar-brand img {
         margin-top: 2rem;
         padding: 40px 20px;
     }
+
     .evaluation-hero {
         text-align: start;
         min-height: unset;
@@ -5455,7 +5469,7 @@ a.navbar-brand img {
             font-size: 14px;
         }
     }
- 
+
 }
 
 /* Why Choose Us Visual Composition */
@@ -5678,21 +5692,26 @@ a.navbar-brand img {
 
     .features-content {
         padding-inline-start: 0 !important;
-         .fz45 {
+
+        .fz45 {
             font-size: 22px;
         }
+
         .feature-icon-box {
             width: 55px;
             height: 55px;
+
             svg {
                 width: 30px;
                 height: 30px;
             }
         }
+
         .feature-item-v3 {
             .fz24 {
                 font-size: 18px;
             }
+
             p {
                 font-size: 14px;
             }
@@ -5764,7 +5783,6 @@ a.navbar-brand img {
     background-color: #F8FAFC;
     font-size: 14px;
     height: 48px;
-    color: var(--custom-primary-dark);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -5851,11 +5869,11 @@ a.navbar-brand img {
     gap: 6px;
     font-size: 0.8rem;
     color: #6c757d;
- }
+}
 
 .job-meta-item i {
-     font-size: 0.85rem;
- }
+    font-size: 0.85rem;
+}
 
 /* Footer */
 .job-posting-card-footer {
@@ -5883,7 +5901,8 @@ a.navbar-brand img {
     font-weight: 700;
     display: inline-flex;
     align-items: center;
-     padding-block: 12px;;
+    padding-block: 12px;
+    ;
     background-color: var(--bs-primary);
     color: var(--bs-white);
     border: none;
@@ -5915,6 +5934,7 @@ a.navbar-brand img {
         padding: 2rem 1.5rem;
         border-radius: 20px;
     }
+
     .careers-positions-section {
         h2 {
             font-size: 20px;
@@ -5972,7 +5992,6 @@ a.navbar-brand img {
     background-color: #F8FAFC;
     font-size: 14px;
     height: 50px;
-    color: var(--custom-primary-dark);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -6144,7 +6163,6 @@ a.navbar-brand img {
 
 .custom-faq-accordion .accordion-button:not(.collapsed) {
     background-color: transparent !important;
-    color: var(--bs-primary) !important;
     box-shadow: none !important;
 }
 
@@ -6163,7 +6181,7 @@ a.navbar-brand img {
 /* TERMS OF USE / PRIVACY POLICY         */
 /* ------------------------------------- */
 .terms-sidebar-list {
-    border-inline-start: 1px solid #eee;
+    border-inline-start: 3px solid #eee;
     padding-block: 10px;
 }
 
@@ -6186,10 +6204,10 @@ a.navbar-brand img {
 .terms-nav-item .nav-link.active::before {
     content: '';
     position: absolute;
-    inset-inline-start: 0;
+    inset-inline-start: -3px;
     /* Align with the parent's edge where the border is */
     inset-block: 0;
-    width: 3.5px;
+    width: 3px;
     background-color: var(--custom-primary-darker);
     z-index: 2;
 }
@@ -6254,6 +6272,11 @@ a.navbar-brand img {
     align-items: center;
     overflow: visible;
     /* Allow negative margin overlap */
+
+    @media (max-width: 767.98px) {
+        border-radius: 30px;
+        padding: 1.5rem 1rem !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -6280,6 +6303,12 @@ a.navbar-brand img {
         margin-bottom: 0;
         margin-top: 2rem;
     }
+
+    .service-page-content {
+        .fz45 {
+            font-size: 22px;
+        }
+    }
 }
 
 
@@ -6294,6 +6323,15 @@ a.navbar-brand img {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     background-color: transparent;
     border: 1px solid transparent;
+
+    h4 {
+        color: var(--bs-primary);
+        font-size: 24px;
+    }
+
+    p {
+        color: var(--bs-primary);
+    }
 }
 
 .step-number-circle {
@@ -6316,13 +6354,13 @@ a.navbar-brand img {
     gap: 8px;
     color: #6c757d;
     font-size: 0.95rem;
-    font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .learn-more-link i {
-    transform: scaleX(-1) rotate(-45deg);
+    /* transform: scaleX(-1) rotate(-45deg); */
     font-size: 0.85rem;
+
 }
 
 /* Hover State */
@@ -6340,7 +6378,8 @@ a.navbar-brand img {
     color: var(--bs-black);
 }
 
-.service-step-card:hover p {
+.service-step-card:hover p,
+.service-step-card:hover h4 {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
