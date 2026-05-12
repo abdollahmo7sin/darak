@@ -6657,3 +6657,69 @@ text {
         }
     }
 }
+
+.floating-icons {
+    position: fixed;
+    z-index: 9999;
+    bottom: 5px;
+    inset-inline-end: 15px;
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.17000000178813934);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+
+    backdrop-filter: blur(10.800000190734863px);
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            a {
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background-color: #fff;
+                display: flex;
+                font-size: 21px;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                transition: all 0.3s ease;
+
+                &.wishlist {
+                    background-color: #cca549;
+                }
+
+                &.whatsapp {
+                    background-color: #00a573;
+                }
+
+                &.call {
+                    background-color: #104084;
+                }
+
+                &.back-top {
+                    background-color: var(--bs-white);
+                    color: var(--bs-primary);
+                }
+
+                &:hover {
+                    background-color: var(--bs-primary);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
