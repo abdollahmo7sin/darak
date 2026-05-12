@@ -6687,12 +6687,12 @@ text {
 
         li {
             a {
-                width: 42px;
-                height: 42px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
                 background-color: #fff;
                 display: flex;
-                font-size: 21px;
+                font-size: 25px;
                 align-items: center;
                 justify-content: center;
                 color: white;
